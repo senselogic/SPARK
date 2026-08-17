@@ -27,4 +27,4 @@ class DO_REMOVE_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_block_type_controller = new DO_REMOVE_BLOCK_TYPE_CONTROLLER(  $language_code,  $block_type_id );
+$do_remove_block_type_controller = new DO_REMOVE_BLOCK_TYPE_CONTROLLER( $language_code, $block_type_id );

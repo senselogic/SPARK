@@ -36,4 +36,4 @@ class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $manage_page_controller = new MANAGE_PAGE_CONTROLLER(  $page_id_or_slug );
+$manage_page_controller = new MANAGE_PAGE_CONTROLLER( $page_id_or_slug );

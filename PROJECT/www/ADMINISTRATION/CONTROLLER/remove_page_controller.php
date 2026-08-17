@@ -36,4 +36,4 @@ class REMOVE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_page_controller = new REMOVE_PAGE_CONTROLLER(  $language_code,  $page_id );
+$remove_page_controller = new REMOVE_PAGE_CONTROLLER( $language_code, $page_id );

@@ -27,4 +27,4 @@ class DO_REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_text_controller = new DO_REMOVE_TEXT_CONTROLLER(  $language_code,  $text_id );
+$do_remove_text_controller = new DO_REMOVE_TEXT_CONTROLLER( $language_code, $text_id );

@@ -128,21 +128,21 @@ function Route(
     string $path
     )
 {
-     $path_value_array = GetPathValueArray( $path );
-     $language_code = ExtractLanguageCode( $path_value_array, LanguageCodeArray, '' );
+    $path_value_array = GetPathValueArray( $path );
+    $language_code = ExtractLanguageCode( $path_value_array, LanguageCodeArray, '' );
 
     if ( $language_code === '' )
     {
         $language_code = GetBrowserLanguageCode( LanguageCodeArray, DefaultLanguageCode );
     }
 
-     $route = GetRoute( $path_value_array, 'home' );
-     $path_value_count = count( $path_value_array );
-     $it_is_get_request = IsGetRequest();
-     $it_is_post_request = IsPostRequest();
-     $it_is_put_request = IsPutRequest();
-     $it_is_delete_request = IsDeleteRequest();
-     $user_is_connected = FindSessionValue( 'UserIsConnected', false );
+    $route = GetRoute( $path_value_array, 'home' );
+    $path_value_count = count( $path_value_array );
+    $it_is_get_request = IsGetRequest();
+    $it_is_post_request = IsPostRequest();
+    $it_is_put_request = IsPutRequest();
+    $it_is_delete_request = IsDeleteRequest();
+    $user_is_connected = FindSessionValue( 'UserIsConnected', false );
 
     if ( $path_value_count >= 1
          && $path_value_array[ 0 ] === 'admin' )
@@ -176,7 +176,7 @@ function Route(
             }
             else if ( $it_is_post_request )
             {
-                 $path = '/admin';
+                $path = '/admin';
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_connect_user_controller.php';
             }
@@ -235,7 +235,7 @@ function Route(
                   && $path_value_array[ 1 ] === 'page'
                   && $path_value_array[ 2 ] === 'manage' )
         {
-             $page_id_or_slug = $path_value_array[ 3 ];
+            $page_id_or_slug = $path_value_array[ 3 ];
 
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_page_controller.php';
         }
@@ -251,7 +251,7 @@ function Route(
                   && $path_value_array[ 1 ] === 'block'
                   && $path_value_array[ 2 ] === 'manage' )
         {
-             $block_id = $path_value_array[ 3 ];
+            $block_id = $path_value_array[ 3 ];
 
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_block_controller.php';
         }
@@ -296,7 +296,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $text_id = $path_value_array[ 3 ];
+                $text_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_text_controller.php';
             }
@@ -304,7 +304,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $text_id = $path_value_array[ 3 ];
+                $text_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_text_controller.php';
             }
@@ -314,7 +314,7 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' ) )
             {
-                 $text_id = $path_value_array[ 3 ];
+                $text_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_text_controller.php';
             }
@@ -322,7 +322,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $text_id = $path_value_array[ 3 ];
+                $text_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_text_controller.php';
             }
@@ -330,7 +330,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $text_id = $path_value_array[ 3 ];
+                $text_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_text_controller.php';
             }
@@ -368,7 +368,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $language_id = $path_value_array[ 3 ];
+                $language_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_language_controller.php';
             }
@@ -376,7 +376,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $language_id = $path_value_array[ 3 ];
+                $language_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_language_controller.php';
             }
@@ -388,7 +388,7 @@ function Route(
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'IsActive' ) )
             {
-                 $language_id = $path_value_array[ 3 ];
+                $language_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_language_controller.php';
             }
@@ -396,7 +396,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $language_id = $path_value_array[ 3 ];
+                $language_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_language_controller.php';
             }
@@ -404,7 +404,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $language_id = $path_value_array[ 3 ];
+                $language_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_language_controller.php';
             }
@@ -440,7 +440,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $page_type_id = $path_value_array[ 3 ];
+                $page_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_page_type_controller.php';
             }
@@ -448,7 +448,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $page_type_id = $path_value_array[ 3 ];
+                $page_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_page_type_controller.php';
             }
@@ -458,7 +458,7 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' ) )
             {
-                 $page_type_id = $path_value_array[ 3 ];
+                $page_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_page_type_controller.php';
             }
@@ -466,7 +466,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $page_type_id = $path_value_array[ 3 ];
+                $page_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_page_type_controller.php';
             }
@@ -474,7 +474,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $page_type_id = $path_value_array[ 3 ];
+                $page_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_page_type_controller.php';
             }
@@ -526,7 +526,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                $page_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_page_controller.php';
             }
@@ -534,7 +534,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                $page_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_page_controller.php';
             }
@@ -560,7 +560,7 @@ function Route(
                       && HasPostValue( 'MetaDescription' )
                       && HasPostValue( 'MetaImagePath' ) )
             {
-                 $page_id = $path_value_array[ 3 ];
+                $page_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_page_controller.php';
             }
@@ -568,7 +568,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                $page_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_page_controller.php';
             }
@@ -576,7 +576,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                $page_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_page_controller.php';
             }
@@ -612,7 +612,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $block_type_id = $path_value_array[ 3 ];
+                $block_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_type_controller.php';
             }
@@ -620,7 +620,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $block_type_id = $path_value_array[ 3 ];
+                $block_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_block_type_controller.php';
             }
@@ -630,7 +630,7 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' ) )
             {
-                 $block_type_id = $path_value_array[ 3 ];
+                $block_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_block_type_controller.php';
             }
@@ -638,7 +638,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $block_type_id = $path_value_array[ 3 ];
+                $block_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_block_type_controller.php';
             }
@@ -646,7 +646,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $block_type_id = $path_value_array[ 3 ];
+                $block_type_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_block_type_controller.php';
             }
@@ -710,7 +710,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                $block_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_controller.php';
             }
@@ -718,7 +718,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                $block_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_block_controller.php';
             }
@@ -756,7 +756,7 @@ function Route(
                       && HasPostValue( 'KeyArray' )
                       && HasPostValue( 'ValueArray' ) )
             {
-                 $block_id = $path_value_array[ 3 ];
+                $block_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_block_controller.php';
             }
@@ -764,7 +764,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                $block_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_block_controller.php';
             }
@@ -772,7 +772,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                $block_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_block_controller.php';
             }
@@ -812,7 +812,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $contact_id = $path_value_array[ 3 ];
+                $contact_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_contact_controller.php';
             }
@@ -820,7 +820,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $contact_id = $path_value_array[ 3 ];
+                $contact_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_contact_controller.php';
             }
@@ -835,7 +835,7 @@ function Route(
                       && HasPostValue( 'Message' )
                       && HasPostValue( 'DateTime' ) )
             {
-                 $contact_id = $path_value_array[ 3 ];
+                $contact_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_contact_controller.php';
             }
@@ -843,7 +843,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $contact_id = $path_value_array[ 3 ];
+                $contact_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_contact_controller.php';
             }
@@ -851,7 +851,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $contact_id = $path_value_array[ 3 ];
+                $contact_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_contact_controller.php';
             }
@@ -889,7 +889,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $connection_id = $path_value_array[ 3 ];
+                $connection_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_connection_controller.php';
             }
@@ -897,7 +897,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $connection_id = $path_value_array[ 3 ];
+                $connection_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_connection_controller.php';
             }
@@ -909,7 +909,7 @@ function Route(
                       && HasPostValue( 'IsFailed' )
                       && HasPostValue( 'AttemptCount' ) )
             {
-                 $connection_id = $path_value_array[ 3 ];
+                $connection_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_connection_controller.php';
             }
@@ -917,7 +917,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $connection_id = $path_value_array[ 3 ];
+                $connection_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_connection_controller.php';
             }
@@ -925,7 +925,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $connection_id = $path_value_array[ 3 ];
+                $connection_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_connection_controller.php';
             }
@@ -963,7 +963,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $user_id = $path_value_array[ 3 ];
+                $user_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_user_controller.php';
             }
@@ -971,7 +971,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $user_id = $path_value_array[ 3 ];
+                $user_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_user_controller.php';
             }
@@ -983,7 +983,7 @@ function Route(
                       && HasPostValue( 'Password' )
                       && HasPostValue( 'Role' ) )
             {
-                 $user_id = $path_value_array[ 3 ];
+                $user_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_user_controller.php';
             }
@@ -991,7 +991,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $user_id = $path_value_array[ 3 ];
+                $user_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_user_controller.php';
             }
@@ -999,7 +999,7 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $user_id = $path_value_array[ 3 ];
+                $user_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_user_controller.php';
             }
@@ -1052,13 +1052,13 @@ function Route(
                  && HasPostValue( 'Message' )
                  && HasPostValue( 'Captcha' ) )
             {
-                 $name = GetPostValue( 'Name' );
-                 $company = GetPostValue( 'Company' );
-                 $email = GetPostValue( 'Email' );
-                 $phone = GetPostValue( 'Phone' );
-                 $subject = GetPostValue( 'Subject' );
-                 $message = GetPostValue( 'Message' );
-                 $captcha = GetPostValue( 'Captcha' );
+                $name = GetPostValue( 'Name' );
+                $company = GetPostValue( 'Company' );
+                $email = GetPostValue( 'Email' );
+                $phone = GetPostValue( 'Phone' );
+                $subject = GetPostValue( 'Subject' );
+                $message = GetPostValue( 'Message' );
+                $captcha = GetPostValue( 'Captcha' );
 
                 require_once __DIR__ . '/' . 'CONTROLLER/add_contact_controller.php';
             }

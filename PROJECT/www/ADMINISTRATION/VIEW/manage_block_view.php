@@ -2,7 +2,7 @@
 <div id="manage-block-view">
     <div class="page-section form-section">
         <?php
-             $block = $this->Block;
+            $block = $this->Block;
             require __DIR__ . '/' . 'BLOCK/PREVIEW/block.php';
         ?>
         <div class="form-toolbar">

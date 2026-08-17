@@ -1,4 +1,4 @@
-<?php if (  $block->Title !== '' ) { ?>
+<?php if ( $block->Title !== '' ) { ?>
     <h3 class="block-title">
         <?php echo $this->GetProcessedMultilineText( $block->Title ); ?>
     </h3>

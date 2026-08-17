@@ -81,9 +81,9 @@ function AddParentRoute(
         $route = GetPath();
     }
 
-     $route_array = FindSessionValue( "RouteArray", [] );
+    $route_array = FindSessionValue( "RouteArray", [] );
 
-    for (  $route_index = count( $route_array ) - 1;
+    for ( $route_index = count( $route_array ) - 1;
           $route_index >= 0;
           --$route_index )
     {
@@ -113,7 +113,7 @@ function MatchesRouteFilter(
     }
     else if ( is_array( $route_filter ) )
     {
-        foreach ( $route_filter as  $sub_route_filer )
+        foreach ( $route_filter as $sub_route_filer )
         {
             if ( MatchesRouteFilter( $route, sub_route_filter ) )
             {
@@ -147,9 +147,9 @@ function GetParentRoute(
         $route = GetPath();
     }
 
-     $route_array = FindSessionValue( "RouteArray", [] );
+    $route_array = FindSessionValue( "RouteArray", [] );
 
-    for (  $route_index = 0;
+    for ( $route_index = 0;
           $route_index < count( $route_array );
           ++$route_index )
     {
@@ -332,8 +332,8 @@ function GetBrowserName(
 {
     if ( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) )
     {
-         $user_agent = $_SERVER[ 'HTTP_USER_AGENT' ];
-         $part_array = explode( '/', str_replace( ' ', '/', $user_agent ) );
+        $user_agent = $_SERVER[ 'HTTP_USER_AGENT' ];
+        $part_array = explode( '/', str_replace( ' ', '/', $user_agent ) );
 
         if ( in_array( 'Edge', $part_array ) )
         {
@@ -1230,7 +1230,7 @@ function GetCountryLocation(
     $country_code
     )
 {
-     $location = new stdClass();
+    $location = new stdClass();
     $location->Service = '';
     $location->Latitude = GetCapitalLatitudeFromCountryCode( $country_code );
     $location->Longitude = GetCapitalLongitudeFromCountryCode( $country_code );
@@ -1250,7 +1250,7 @@ function GetBrowserLocation(
     $ip_api_key = null
     )
 {
-     $location = new stdClass();
+    $location = new stdClass();
     $location->Service = '';
     $location->Latitude = 0.0;
     $location->Longitude = 0.0;
@@ -1277,7 +1277,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( @file_get_contents( 'http://ip-api.com/json/' . $browser_address ) );
+                $geographic_data = json_decode( @file_get_contents( 'http://ip-api.com/json/' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'countryCode' )
@@ -1295,7 +1295,7 @@ function GetBrowserLocation(
                     $location->IsFound = true;
                 }
             }
-            catch ( Exception  $exception )
+            catch ( Exception $exception )
             {
             }
         }
@@ -1304,7 +1304,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( @file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' . $browser_address ) );
+                $geographic_data = json_decode( @file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'geoplugin_countryCode' )
@@ -1323,7 +1323,7 @@ function GetBrowserLocation(
                     $location->IsFound = true;
                 }
             }
-            catch ( Exception  $exception )
+            catch ( Exception $exception )
             {
             }
         }
@@ -1332,7 +1332,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( @file_get_contents( 'https://www.iplocate.io/api/lookup/' . $browser_address ) );
+                $geographic_data = json_decode( @file_get_contents( 'https://www.iplocate.io/api/lookup/' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'country_code' )
@@ -1349,7 +1349,7 @@ function GetBrowserLocation(
                     $location->IsFound = true;
                 }
             }
-            catch ( Exception  $exception )
+            catch ( Exception $exception )
             {
             }
         }
@@ -1358,7 +1358,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( @file_get_contents( 'https://api.hostip.info/get_json.php?ip=' . $browser_address ) );
+                $geographic_data = json_decode( @file_get_contents( 'https://api.hostip.info/get_json.php?ip=' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'country_code' )
@@ -1373,7 +1373,7 @@ function GetBrowserLocation(
                     $location->IsFound = true;
                 }
             }
-            catch ( Exception  $exception )
+            catch ( Exception $exception )
             {
             }
         }
@@ -1462,7 +1462,7 @@ function SendRequest(
         $request_url .= '?' . http_build_query( $request_query_map );
     }
 
-     $curl_request = curl_init( $request_url );
+    $curl_request = curl_init( $request_url );
 
     if ( $request_method === 'POST' )
     {
@@ -1485,8 +1485,8 @@ function SendRequest(
         curl_setopt( $curl_request, CURLOPT_HTTPHEADER, $request_header_array );
     }
 
-     $request_response = curl_exec( $curl_request );
-     $request_status = curl_getinfo( $curl_request, CURLINFO_RESPONSE_CODE );
+    $request_response = curl_exec( $curl_request );
+    $request_status = curl_getinfo( $curl_request, CURLINFO_RESPONSE_CODE );
 
     curl_close( $curl_request );
 
@@ -1505,7 +1505,7 @@ function SendJsonRequest(
 {
     array_push( $request_header_array, 'Content-Type: application/json; charset=UTF-8' );
 
-     $request_result
+    $request_result
         = SendRequest(
               $request_url,
               $request_method,

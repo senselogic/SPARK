@@ -32,4 +32,4 @@ class MANAGE_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $manage_blocks_controller = new MANAGE_BLOCKS_CONTROLLER();
+$manage_blocks_controller = new MANAGE_BLOCKS_CONTROLLER();

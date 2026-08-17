@@ -2,7 +2,7 @@
 <div id="manage-page-view">
     <div class="page-section form-section">
         <?php
-             $page = $this->Page;
+            $page = $this->Page;
             require __DIR__ . '/' . 'BLOCK/PREVIEW/page.php';
         ?>
         <div class="form-toolbar">
@@ -20,8 +20,8 @@
         <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?> :
     </div>
     <div class="margin-top-1rem margin-bottom-2rem card-list">
-        <?php  $added_block_number = 1; ?>
-        <?php foreach ( $this->Page->SortedBlockArray as  $block_index =>  $block ) { ?>
+        <?php $added_block_number = 1; ?>
+        <?php foreach ( $this->Page->SortedBlockArray as $block_index => $block ) { ?>
             <?php $added_block_number = GetAddedElementNumber( $this->Page->BlockArray, $block_index ); ?>
             <div class="card-container filter-row">
                 <div class="card">

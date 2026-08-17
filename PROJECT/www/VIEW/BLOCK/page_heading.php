@@ -39,7 +39,7 @@
 
 
 
-<div class="page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<?php echo  $page->ImagePath; ?>.huge.avif?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $page->ImageHorizontalPosition; ?> <?php echo $page->ImageVerticalPosition; ?> / <?php echo $page->ImageFit; ?>, url( '<?php echo GetPreloadImagePath( $page->ImagePath ); ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $page->ImageHorizontalPosition; ?> <?php echo $page->ImageVerticalPosition; ?> / <?php echo $page->ImageFit; ?>">
+<div class="page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<?php echo $page->ImagePath; ?>.huge.avif?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $page->ImageHorizontalPosition; ?> <?php echo $page->ImageVerticalPosition; ?> / <?php echo $page->ImageFit; ?>, url( '<?php echo GetPreloadImagePath( $page->ImagePath ); ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $page->ImageHorizontalPosition; ?> <?php echo $page->ImageVerticalPosition; ?> / <?php echo $page->ImageFit; ?>">
     <?php if ( $page->Heading !== '' ) { ?>
         <h1 class="page-heading-title">
             <?php echo $this->GetProcessedText( $page->Heading ); ?>

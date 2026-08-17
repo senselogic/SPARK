@@ -17,11 +17,11 @@ class DO_ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
-             $id = GetPostValue( 'Id' );
-             $code = GetPostValue( 'Code' );
-             $number = GetPostValue( 'Number' );
-             $text = GetPostValue( 'Text' );
-             $is_active = GetPostValue( 'IsActive' );
+            $id = GetPostValue( 'Id' );
+            $code = GetPostValue( 'Code' );
+            $number = GetPostValue( 'Number' );
+            $text = GetPostValue( 'Text' );
+            $is_active = GetPostValue( 'IsActive' );
 
             AddDatabaseLanguage( $id, $code, $number, $text, $is_active );
 
@@ -32,4 +32,4 @@ class DO_ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_language_controller = new DO_ADD_LANGUAGE_CONTROLLER(  $language_code );
+$do_add_language_controller = new DO_ADD_LANGUAGE_CONTROLLER( $language_code );

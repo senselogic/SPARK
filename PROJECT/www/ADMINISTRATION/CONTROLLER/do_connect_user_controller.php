@@ -28,12 +28,12 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 
         if ( $this->Connection->BackoffSecondCount > 0 )
         {
-             $user = null;
+            $user = null;
         }
         else
         {
-             $pseudonym = GetPostValue( 'Pseudonym' );
-             $password = GetPostValue( 'Password' );
+            $pseudonym = GetPostValue( 'Pseudonym' );
+            $password = GetPostValue( 'Password' );
             $user = GetDatabaseUserByPseudonymAndPassword( $pseudonym, $password );
         }
 
@@ -69,4 +69,4 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER(  $language_code,  $path );
+$do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER( $language_code, $path );

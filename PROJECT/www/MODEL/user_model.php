@@ -9,7 +9,7 @@ function GetDatabaseUserByPseudonymAndPassword(
     string $password
     )
 {
-     $statement = GetDatabaseStatement( 'select * from `USER` where `Pseudonym` = ? and `Password` = ?' );
+    $statement = GetDatabaseStatement( 'select * from `USER` where `Pseudonym` = ? and `Password` = ?' );
     $statement->bindParam( 1, $pseudonym, PDO::PARAM_STR );
     $statement->bindParam( 2, $password, PDO::PARAM_STR );
     $statement->execute();

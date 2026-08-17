@@ -73,11 +73,11 @@
         <form class="form-centered" name="AddLanguageForm" onsubmit="return IsValidAddLanguageForm()" action="/admin/language/add" method="post">
             <div class="form-container" data-is-row data-table-name="LANGUAGE">
                 <?php
-                     $field_name = 'Id';
+                    $field_name = 'Id';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -91,11 +91,11 @@
                     <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Code';
+                    $field_name = 'Code';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -109,11 +109,11 @@
                     <input-component class="form-component" result-name="Code" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Number';
+                    $field_name = 'Number';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -127,11 +127,11 @@
                     <input-component class="form-component" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Text';
+                    $field_name = 'Text';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -145,11 +145,11 @@
                     <multilingual-input-component class="form-component" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-component>
                 </div>
                 <?php
-                     $field_name = 'IsActive';
+                    $field_name = 'IsActive';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {

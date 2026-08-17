@@ -18,8 +18,8 @@ class DO_EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-             $slug = GetPostValue( 'Slug' );
-             $text = GetPostValue( 'Text' );
+            $slug = GetPostValue( 'Slug' );
+            $text = GetPostValue( 'Text' );
 
             SetDatabaseText( $text_id, $slug, $text );
 
@@ -30,4 +30,4 @@ class DO_EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_text_controller = new DO_EDIT_TEXT_CONTROLLER(  $language_code,  $text_id );
+$do_edit_text_controller = new DO_EDIT_TEXT_CONTROLLER( $language_code, $text_id );

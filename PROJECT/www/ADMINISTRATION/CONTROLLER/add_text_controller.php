@@ -33,4 +33,4 @@ class ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $add_text_controller = new ADD_TEXT_CONTROLLER(  $language_code );
+$add_text_controller = new ADD_TEXT_CONTROLLER( $language_code );

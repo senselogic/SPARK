@@ -80,7 +80,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
                 . "\nMessage : " . $message . "\n"
                 );
         }
-        catch ( Exception  $exception )
+        catch ( Exception $exception )
         {
             PrintError( $exception->getMessage() );
         }
@@ -89,4 +89,4 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $language_code,  $name,  $company,  $email,  $phone,  $subject,  $message,  $captcha );
+$add_contact_controller = new ADD_CONTACT_CONTROLLER( $language_code, $name, $company, $email, $phone, $subject, $message, $captcha );

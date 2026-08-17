@@ -1,13 +1,13 @@
 <?php // -- VARIABLES
 
- $TextBySlugMap = [];
- $ProcessedTagArray = [];
- $ProcessedTagDefinitionArray = [];
- $ProcessedDualTagArray = [];
- $ProcessedDualTagDefinitionArray = [];
- $ProcessedLineTagArray = [];
- $ProcessedLineTagDefinitionArray = [];
- $EndTagIsDefined = false;
+$TextBySlugMap = [];
+$ProcessedTagArray = [];
+$ProcessedTagDefinitionArray = [];
+$ProcessedDualTagArray = [];
+$ProcessedDualTagDefinitionArray = [];
+$ProcessedLineTagArray = [];
+$ProcessedLineTagDefinitionArray = [];
+$EndTagIsDefined = false;
 
 // -- FUNCTIONS
 
@@ -79,7 +79,7 @@ function ReplaceTexts(
 {
     do
     {
-         $prior_text = $text;
+        $prior_text = $text;
 
         $text = str_replace( $old_text, $new_text, $text );
     }
@@ -106,10 +106,10 @@ function ReplaceDualText(
     string $second_new_text
     )
 {
-     $part_array = explode( $old_text, $text );
-     $part_count = count( $part_array );
+    $part_array = explode( $old_text, $text );
+    $part_count = count( $part_array );
 
-    for (  $part_index = 0;
+    for ( $part_index = 0;
           $part_index + 1 < $part_count;
           $part_index += 2 )
     {
@@ -376,7 +376,7 @@ function RemovePrefix(
     string $prefix
     )
 {
-     $prefix_character_count = strlen( $prefix );
+    $prefix_character_count = strlen( $prefix );
 
     if ( strncmp( $text, $prefix, $prefix_character_count ) === 0 )
     {
@@ -396,7 +396,7 @@ function ReplacePrefix(
     string $new_prefix
     )
 {
-     $old_prefix_character_count = strlen( $old_prefix );
+    $old_prefix_character_count = strlen( $old_prefix );
 
     if ( strncmp( $text, $old_prefix, $old_prefix_character_count ) === 0 )
     {
@@ -415,8 +415,8 @@ function HasSuffix(
     string $suffix
     )
 {
-     $text_character_count = strlen( $text );
-     $suffix_character_count = strlen( $suffix );
+    $text_character_count = strlen( $text );
+    $suffix_character_count = strlen( $suffix );
 
     return
         $text_character_count >= $suffix_character_count
@@ -430,8 +430,8 @@ function RemoveSuffix(
     string $suffix
     )
 {
-     $text_character_count = strlen( $text );
-     $suffix_character_count = strlen( $suffix );
+    $text_character_count = strlen( $text );
+    $suffix_character_count = strlen( $suffix );
 
     if ( $text_character_count >= $suffix_character_count
          && substr_compare( $text, $suffix, $text_character_count - $suffix_character_count, $suffix_character_count ) === 0 )
@@ -452,8 +452,8 @@ function ReplaceSuffix(
     string $new_suffix
     )
 {
-     $text_character_count = strlen( $text );
-     $old_suffix_character_count = strlen( $old_suffix );
+    $text_character_count = strlen( $text );
+    $old_suffix_character_count = strlen( $old_suffix );
 
     if ( $text_character_count >= $old_suffix_character_count
          && substr_compare( $text, $old_suffix, $text_character_count - $old_suffix_character_count, $old_suffix_character_count ) === 0 )
@@ -473,10 +473,10 @@ function GetRandomText(
     string $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     )
 {
-     $alphabet_character_count = strlen( $alphabet );
-     $random_text = '';
+    $alphabet_character_count = strlen( $alphabet );
+    $random_text = '';
 
-    for(  $random_character_index = 0;
+    for( $random_character_index = 0;
          $random_character_index < 32;
          ++$random_character_index )
     {
@@ -526,9 +526,9 @@ function GetCapitalizedCaseText(
     string $text
     )
 {
-     $word_array = explode( ' ', $text );
+    $word_array = explode( ' ', $text );
 
-    for (  $word_index = 0;
+    for ( $word_index = 0;
           $word_index < count( $word_array );
           ++$word_index )
     {
@@ -547,9 +547,9 @@ function GetAlphanumericText(
     string $replacement_character = ''
     )
 {
-     $alphanumeric_text = '';
+    $alphanumeric_text = '';
 
-    foreach ( str_split( $text ) as  $character )
+    foreach ( str_split( $text ) as $character )
     {
         if ( ( $character >= '0' && $character <= '9' )
              || ( $character >= 'a' && $character <= 'z' )
@@ -614,12 +614,12 @@ function GetTitleCaseText(
     bool $separator_characters_are_kept = true
     )
 {
-     $title_case_text = '';
+    $title_case_text = '';
 
-    foreach ( str_split( $text ) as  $character )
+    foreach ( str_split( $text ) as $character )
     {
-         $lower_case_character = strtolower( $character );
-         $upper_case_character = strtoupper( $character );
+        $lower_case_character = strtolower( $character );
+        $upper_case_character = strtoupper( $character );
 
         if ( $lower_case_character !== $upper_case_character )
         {
@@ -676,17 +676,17 @@ function GetSnakeCaseText(
     string $separator_character = '_'
     )
 {
-     $character_array = [];
-     $character_is_lower_case_array = [];
-     $character_is_upper_case_array = [];
-     $character_is_digit_array = [];
+    $character_array = [];
+    $character_is_lower_case_array = [];
+    $character_is_upper_case_array = [];
+    $character_is_digit_array = [];
 
-    foreach ( str_split( str_replace( '-', '_', $text ) ) as  $character )
+    foreach ( str_split( str_replace( '-', '_', $text ) ) as $character )
     {
         array_push( $character_array, $character );
 
-         $lower_case_character = strtolower( $character );
-         $upper_case_character = strtoupper( $character );
+        $lower_case_character = strtolower( $character );
+        $upper_case_character = strtoupper( $character );
 
         if ( $lower_case_character !== $upper_case_character )
         {
@@ -702,28 +702,28 @@ function GetSnakeCaseText(
         array_push( $character_is_digit_array, $character >= '0' && $character <= '9' );
     }
 
-     $character_count = strlen( $character_array );
-     $snake_case_text = '';
-     $prior_character_is_lower_case = false;
-     $prior_character_is_upper_case = false;
-     $prior_character_is_digit = false;
+    $character_count = strlen( $character_array );
+    $snake_case_text = '';
+    $prior_character_is_lower_case = false;
+    $prior_character_is_upper_case = false;
+    $prior_character_is_digit = false;
 
-    for (  $character_index = 0;
+    for ( $character_index = 0;
           $character_index < $character_count;
           ++$character_index )
     {
-         $character = $character_array[ $character_index ];
-         $character_is_lower_case = $character_is_lower_case_array[ $character_index ];
-         $character_is_upper_case = $character_is_upper_case_array[ $character_index ];
-         $character_is_digit = $character_is_digit_array[ $character_index ];
+        $character = $character_array[ $character_index ];
+        $character_is_lower_case = $character_is_lower_case_array[ $character_index ];
+        $character_is_upper_case = $character_is_upper_case_array[ $character_index ];
+        $character_is_digit = $character_is_digit_array[ $character_index ];
 
         if ( $character_index + 1 < $character_count )
         {
-             $next_character_is_lower_case = $character_is_lower_case_array[ $character_index + 1 ];
+            $next_character_is_lower_case = $character_is_lower_case_array[ $character_index + 1 ];
         }
         else
         {
-             $next_character_is_lower_case = false;
+            $next_character_is_lower_case = false;
         }
 
         if ( ( $prior_character_is_lower_case
@@ -767,7 +767,7 @@ function GetPartialText(
     string $trimmed_characters = ' '
     )
 {
-     $text_character_count = strlen( $text );
+    $text_character_count = strlen( $text );
 
     if ( $text_character_count <= $maximum_character_count )
     {
@@ -790,7 +790,7 @@ function GetShortenedText(
     string $trimmed_characters = ' '
     )
 {
-     $text_character_count = strlen( $text );
+    $text_character_count = strlen( $text );
 
     if ( $text_character_count <= $maximum_character_count )
     {
@@ -798,9 +798,9 @@ function GetShortenedText(
     }
     else
     {
-         $ellipsis_character_count = strlen( $ellipsis );
-         $first_character_count = ( int )( ( $maximum_character_count - $ellipsis_character_count ) / 2 );
-         $last_character_count = $maximum_character_count - $first_character_count - $ellipsis_character_count;
+        $ellipsis_character_count = strlen( $ellipsis );
+        $first_character_count = ( int )( ( $maximum_character_count - $ellipsis_character_count ) / 2 );
+        $last_character_count = $maximum_character_count - $first_character_count - $ellipsis_character_count;
 
         return
             rtrim( substr( $text, 0, $first_character_count ), $trimmed_characters )
@@ -1020,11 +1020,11 @@ function GetProcessedText(
         $ProcessedTagArray,
         $ProcessedTagDefinitionArray;
 
-     $processed_dual_tag_count = count( $ProcessedDualTagArray );
+    $processed_dual_tag_count = count( $ProcessedDualTagArray );
 
     if ( $processed_dual_tag_count > 0 )
     {
-        for (  $processed_dual_tag_index = 0;
+        for ( $processed_dual_tag_index = 0;
               $processed_dual_tag_index < $processed_dual_tag_count;
               ++$processed_dual_tag_index )
         {
@@ -1076,32 +1076,32 @@ function GetProcessedMultilineText(
         $ProcessedLineTagArray,
         $ProcessedLineTagDefinitionArray;
 
-     $processed_line_tag_count = count( $ProcessedLineTagArray );
+    $processed_line_tag_count = count( $ProcessedLineTagArray );
 
     if ( $processed_line_tag_count > 0 )
     {
-         $line_array = explode( "\n", str_replace( "\r", '', $text ) );
-         $line_count = count( $line_array );
+        $line_array = explode( "\n", str_replace( "\r", '', $text ) );
+        $line_count = count( $line_array );
 
-        for (  $line_index = 0;
+        for ( $line_index = 0;
               $line_index < $line_count;
               ++$line_index )
         {
-             $line = ltrim( $line_array[ $line_index ], "\n" );
+            $line = ltrim( $line_array[ $line_index ], "\n" );
 
-            for (  $processed_line_tag_index = 0;
+            for ( $processed_line_tag_index = 0;
                   $processed_line_tag_index < $processed_line_tag_count;
                   ++$processed_line_tag_index )
             {
-                 $processed_line_tag = $ProcessedLineTagArray[ $processed_line_tag_index ];
-                 $processed_line_tag_character_count = strlen( $processed_line_tag );
+                $processed_line_tag = $ProcessedLineTagArray[ $processed_line_tag_index ];
+                $processed_line_tag_character_count = strlen( $processed_line_tag );
 
                 if ( strncmp( $line, $processed_line_tag, $processed_line_tag_character_count ) === 0 )
                 {
-                     $line_tag_definition_index = $processed_line_tag_index * 3;
-                     $line_tag_opening_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index ];
-                     $line_tag_inner_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 1 ];
-                     $line_tag_closing_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 2 ];
+                    $line_tag_definition_index = $processed_line_tag_index * 3;
+                    $line_tag_opening_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index ];
+                    $line_tag_inner_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 1 ];
+                    $line_tag_closing_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 2 ];
 
                     if ( $line_tag_inner_definition === '' )
                     {
@@ -1112,7 +1112,7 @@ function GetProcessedMultilineText(
                     }
                     else
                     {
-                         $space_character_index = strpos( $line, ' ', $processed_line_tag_character_count );
+                        $space_character_index = strpos( $line, ' ', $processed_line_tag_character_count );
 
                         if ( $space_character_index !== false )
                         {

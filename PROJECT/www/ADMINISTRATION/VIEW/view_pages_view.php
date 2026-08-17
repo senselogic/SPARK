@@ -3,9 +3,9 @@
 <div id="view-pages-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "PageFilter"; ?>
+            <?php $filter_name = "PageFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php  $list_mode_name = "PageListMode"; ?>
+            <?php $list_mode_name = "PageListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/page/add">
@@ -72,7 +72,7 @@
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
-            <?php foreach ( $this->PageArray as  $page ) { ?>
+            <?php foreach ( $this->PageArray as $page ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page->Slug ) ); ?>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $page->Title, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $page->Title, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $page->Heading, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $page->Heading, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $page->Teaser, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $page->Teaser, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $page->Text, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $page->Text, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $page->MetaTitle, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $page->MetaTitle, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $page->MetaDescription, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $page->MetaDescription, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -199,7 +199,7 @@
         </div>
     </div>
     <div class="card-list is-hidden">
-        <?php foreach ( $this->PageArray as  $page ) { ?>
+        <?php foreach ( $this->PageArray as $page ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container" data-is-row data-table-name="PAGE">

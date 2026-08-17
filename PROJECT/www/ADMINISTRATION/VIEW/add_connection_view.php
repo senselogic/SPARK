@@ -73,11 +73,11 @@
         <form class="form-centered" name="AddConnectionForm" onsubmit="return IsValidAddConnectionForm()" action="/admin/connection/add" method="post">
             <div class="form-container" data-is-row data-table-name="CONNECTION">
                 <?php
-                     $field_name = 'Id';
+                    $field_name = 'Id';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -91,11 +91,11 @@
                     <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'BrowserAddress';
+                    $field_name = 'BrowserAddress';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -109,11 +109,11 @@
                     <input-component class="form-component" result-name="BrowserAddress" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'DateTime';
+                    $field_name = 'DateTime';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -127,11 +127,11 @@
                     <input-component class="form-component" result-name="DateTime" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'IsFailed';
+                    $field_name = 'IsFailed';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -145,11 +145,11 @@
                     <dropdown-component class="form-component" result-name="IsFailed" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ '0', '1' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'False', 'True' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
-                     $field_name = 'AttemptCount';
+                    $field_name = 'AttemptCount';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {

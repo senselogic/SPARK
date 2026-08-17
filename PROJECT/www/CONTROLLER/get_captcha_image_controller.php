@@ -20,4 +20,4 @@ class GET_CAPTCHA_IMAGE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $get_captcha_image_controller = new GET_CAPTCHA_IMAGE_CONTROLLER(  $language_code );
+$get_captcha_image_controller = new GET_CAPTCHA_IMAGE_CONTROLLER( $language_code );

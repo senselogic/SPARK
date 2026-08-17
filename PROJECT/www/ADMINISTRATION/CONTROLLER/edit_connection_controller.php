@@ -36,4 +36,4 @@ class EDIT_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_connection_controller = new EDIT_CONNECTION_CONTROLLER(  $language_code,  $connection_id );
+$edit_connection_controller = new EDIT_CONNECTION_CONTROLLER( $language_code, $connection_id );

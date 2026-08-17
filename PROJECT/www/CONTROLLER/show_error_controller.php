@@ -21,4 +21,4 @@ class SHOW_ERROR_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $show_error_controller = new SHOW_ERROR_CONTROLLER();
+$show_error_controller = new SHOW_ERROR_CONTROLLER();

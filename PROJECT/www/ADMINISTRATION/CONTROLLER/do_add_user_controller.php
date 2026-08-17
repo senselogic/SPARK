@@ -17,11 +17,11 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-             $id = GetPostValue( 'Id' );
-             $email = GetPostValue( 'Email' );
-             $pseudonym = GetPostValue( 'Pseudonym' );
-             $password = GetPostValue( 'Password' );
-             $role = GetPostValue( 'Role' );
+            $id = GetPostValue( 'Id' );
+            $email = GetPostValue( 'Email' );
+            $pseudonym = GetPostValue( 'Pseudonym' );
+            $password = GetPostValue( 'Password' );
+            $role = GetPostValue( 'Role' );
 
             AddDatabaseUser( $id, $email, $pseudonym, $password, $role );
 
@@ -32,4 +32,4 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_user_controller = new DO_ADD_USER_CONTROLLER(  $language_code );
+$do_add_user_controller = new DO_ADD_USER_CONTROLLER( $language_code );

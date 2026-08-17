@@ -27,4 +27,4 @@ class DO_REMOVE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_block_controller = new DO_REMOVE_BLOCK_CONTROLLER(  $language_code,  $block_id );
+$do_remove_block_controller = new DO_REMOVE_BLOCK_CONTROLLER( $language_code, $block_id );

@@ -33,4 +33,4 @@ class ADD_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $add_page_type_controller = new ADD_PAGE_TYPE_CONTROLLER(  $language_code );
+$add_page_type_controller = new ADD_PAGE_TYPE_CONTROLLER( $language_code );

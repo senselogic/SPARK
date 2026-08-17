@@ -92,11 +92,11 @@
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container" data-is-row data-table-name="CONTACT">
                 <?php
-                     $field_name = 'Id';
+                    $field_name = 'Id';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -110,11 +110,11 @@
                     <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Name';
+                    $field_name = 'Name';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -128,11 +128,11 @@
                     <input-component class="form-component" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Company';
+                    $field_name = 'Company';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -146,11 +146,11 @@
                     <input-component class="form-component" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Email';
+                    $field_name = 'Email';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -164,11 +164,11 @@
                     <input-component class="form-component" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Phone';
+                    $field_name = 'Phone';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -182,11 +182,11 @@
                     <input-component class="form-component" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Subject';
+                    $field_name = 'Subject';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -200,11 +200,11 @@
                     <input-component class="form-component" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Message';
+                    $field_name = 'Message';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {

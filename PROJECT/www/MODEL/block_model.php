@@ -8,10 +8,10 @@ function LinkBlockArray(
     array &$block_array
     )
 {
-     $block_count = count( $block_array );
-     $block_index = 0;
+    $block_count = count( $block_array );
+    $block_index = 0;
 
-    foreach ( $block_array as  $block )
+    foreach ( $block_array as $block )
     {
         $block->BlockIndex = $block_index;
 
@@ -44,9 +44,9 @@ function GetActiveBlockArray(
     string $language_code
     )
 {
-     $active_block_array = [];
+    $active_block_array = [];
 
-    foreach ( $block_array as  $block )
+    foreach ( $block_array as $block )
     {
         if ( in_array( $language_code, $block->LanguageCodeArray, true ) )
         {
@@ -63,9 +63,9 @@ function GetValidBlockByIdMap(
     array &$block_array
     )
 {
-     $block_by_id_map = [];
+    $block_by_id_map = [];
 
-    foreach ( $block_array as  $block )
+    foreach ( $block_array as $block )
     {
         $block_by_id_map[ $block->Id ] = $block;
     }

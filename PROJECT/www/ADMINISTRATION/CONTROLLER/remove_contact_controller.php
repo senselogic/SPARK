@@ -36,4 +36,4 @@ class REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_contact_controller = new REMOVE_CONTACT_CONTROLLER(  $language_code,  $contact_id );
+$remove_contact_controller = new REMOVE_CONTACT_CONTROLLER( $language_code, $contact_id );

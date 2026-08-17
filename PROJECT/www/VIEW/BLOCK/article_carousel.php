@@ -1,6 +1,6 @@
 <?php
-     $article_page_count = count(  $article_page_array );
-     $article_carousel_slide_count = $article_page_count + 1;
+    $article_page_count = count( $article_page_array );
+    $article_carousel_slide_count = $article_page_count + 1;
 ?>
 
 
@@ -58,8 +58,8 @@
 
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
-        <?php for (  $article_carousel_slide_index = 0; $article_carousel_slide_index < $article_carousel_slide_count; ++$article_carousel_slide_index ) { ?>
-            <?php  $article_page = $article_page_array[ $article_carousel_slide_index % $article_page_count ]; ?>
+        <?php for ( $article_carousel_slide_index = 0; $article_carousel_slide_index < $article_carousel_slide_count; ++$article_carousel_slide_index ) { ?>
+            <?php $article_page = $article_page_array[ $article_carousel_slide_index % $article_page_count ]; ?>
             <div class="article-carousel-slide" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<?php echo $article_page->ImagePath; ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $article_page->ImageHorizontalPosition; ?> <?php echo $article_page->ImageVerticalPosition; ?> / <?php echo $article_page->ImageFit; ?>, url( '<?php echo GetPreloadImagePath( $article_page->ImagePath ); ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $article_page->ImageHorizontalPosition; ?> <?php echo $article_page->ImageVerticalPosition; ?> / <?php echo $article_page->ImageFit; ?>" onclick="ShowView( '<?php echo $article_page->Route; ?>' )">
                 <div class="article-carousel-slide-text">
                     <?php echo $this->GetTranslatedText( $article_page->Teaser ); ?>

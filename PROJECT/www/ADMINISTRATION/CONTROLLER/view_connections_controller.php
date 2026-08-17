@@ -35,4 +35,4 @@ class VIEW_CONNECTIONS_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $view_connections_controller = new VIEW_CONNECTIONS_CONTROLLER(  $language_code );
+$view_connections_controller = new VIEW_CONNECTIONS_CONTROLLER( $language_code );

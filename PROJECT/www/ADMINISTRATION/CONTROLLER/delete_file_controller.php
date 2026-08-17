@@ -14,14 +14,14 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $file_path = GetBaseFolderName() . GetPostValue( 'FilePath' );
+        $file_path = GetBaseFolderName() . GetPostValue( 'FilePath' );
 
         if ( FileExists( $file_path )
              && RemoveFile( $file_path ) )
         {
             if ( HasSuffix( $file_path, ImageExtension ) )
             {
-                foreach ( [ HugeImageExtension, BigImageExtension, LargeImageExtension, WideImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension, '.meta.jpg' ] as  $suffix )
+                foreach ( [ HugeImageExtension, BigImageExtension, LargeImageExtension, WideImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension, '.meta.jpg' ] as $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {
@@ -63,4 +63,4 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $delete_file_controller = new DELETE_FILE_CONTROLLER(  $language_code );
+$delete_file_controller = new DELETE_FILE_CONTROLLER( $language_code );

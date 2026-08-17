@@ -17,11 +17,11 @@ class DO_ADD_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-             $id = GetPostValue( 'Id' );
-             $browser_address = GetPostValue( 'BrowserAddress' );
-             $date_time = GetPostValue( 'DateTime' );
-             $is_failed = GetPostValue( 'IsFailed' );
-             $attempt_count = GetPostValue( 'AttemptCount' );
+            $id = GetPostValue( 'Id' );
+            $browser_address = GetPostValue( 'BrowserAddress' );
+            $date_time = GetPostValue( 'DateTime' );
+            $is_failed = GetPostValue( 'IsFailed' );
+            $attempt_count = GetPostValue( 'AttemptCount' );
 
             AddDatabaseConnection( $id, $browser_address, $date_time, $is_failed, $attempt_count );
 
@@ -32,4 +32,4 @@ class DO_ADD_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_connection_controller = new DO_ADD_CONNECTION_CONTROLLER(  $language_code );
+$do_add_connection_controller = new DO_ADD_CONNECTION_CONTROLLER( $language_code );

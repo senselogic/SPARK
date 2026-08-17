@@ -36,4 +36,4 @@ class EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_text_controller = new EDIT_TEXT_CONTROLLER(  $language_code,  $text_id );
+$edit_text_controller = new EDIT_TEXT_CONTROLLER( $language_code, $text_id );

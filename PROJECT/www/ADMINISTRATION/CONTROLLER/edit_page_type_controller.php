@@ -36,4 +36,4 @@ class EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_page_type_controller = new EDIT_PAGE_TYPE_CONTROLLER(  $language_code,  $page_type_id );
+$edit_page_type_controller = new EDIT_PAGE_TYPE_CONTROLLER( $language_code, $page_type_id );

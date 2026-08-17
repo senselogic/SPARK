@@ -7,13 +7,13 @@ function GetBrowserLanguageCode(
 {
     if ( isset( $_SERVER[ 'HTTP_ACCEPT_LANGUAGE' ] ) )
     {
-         $browser_language_code_array = explode( ',', strtolower( $_SERVER[ 'HTTP_ACCEPT_LANGUAGE' ] ) );
+        $browser_language_code_array = explode( ',', strtolower( $_SERVER[ 'HTTP_ACCEPT_LANGUAGE' ] ) );
 
-        foreach ( $browser_language_code_array as  $browser_language_code )
+        foreach ( $browser_language_code_array as $browser_language_code )
         {
             $browser_language_code = substr( $browser_language_code, 0, 2 );
 
-             $valid_language_code_index = array_search( $browser_language_code, $valid_language_code_array, true );
+            $valid_language_code_index = array_search( $browser_language_code, $valid_language_code_array, true );
 
             if ( $valid_language_code_index !== false )
             {
@@ -35,9 +35,9 @@ function ExtractLanguageCode(
 {
     if ( count( $path_value_array ) > 0 )
     {
-         $language_code = $path_value_array[ 0 ];
+        $language_code = $path_value_array[ 0 ];
 
-        foreach ( $valid_language_code_array as  $valid_language_code )
+        foreach ( $valid_language_code_array as $valid_language_code )
         {
             if ( $language_code === $valid_language_code )
             {
@@ -57,7 +57,7 @@ function GetUntranslatedText(
     string $text
     )
 {
-     $translated_text_array = explode( '¨', $text );
+    $translated_text_array = explode( '¨', $text );
 
     return $translated_text_array[ 0 ];
 }
@@ -69,11 +69,11 @@ function MatchesLanguageSpecifier(
     string $language_specifier
     )
 {
-     $language_tag_part_array = explode( '-', $language_tag . '--' );
+    $language_tag_part_array = explode( '-', $language_tag . '--' );
 
-    foreach ( explode( ',', $language_specifier ) as  $language_specifier_tag )
+    foreach ( explode( ',', $language_specifier ) as $language_specifier_tag )
     {
-         $language_specifier_tag_part_array = explode( '-', $language_specifier_tag . '--' );
+        $language_specifier_tag_part_array = explode( '-', $language_specifier_tag . '--' );
 
         if ( ( $language_tag_part_array[ 0 ] === ''
                || $language_specifier_tag_part_array[ 0 ] === ''
@@ -100,16 +100,16 @@ function GetTranslatedText(
     string $default_language_tag = 'en'
     )
 {
-     $translated_text_array = explode( '¨', $text );
+    $translated_text_array = explode( '¨', $text );
 
     if ( $language_tag !== $default_language_tag )
     {
-        for (  $translated_text_index = count( $translated_text_array ) - 1;
+        for ( $translated_text_index = count( $translated_text_array ) - 1;
               $translated_text_index >= 1;
               --$translated_text_index )
         {
-             $translated_text = $translated_text_array[ $translated_text_index ];
-             $colon_character_index = strpos( $translated_text, ':' );
+            $translated_text = $translated_text_array[ $translated_text_index ];
+            $colon_character_index = strpos( $translated_text, ':' );
 
             if ( $colon_character_index !== false )
             {
@@ -131,21 +131,21 @@ function GetTranslationArray(
     string $default_language_tag = ''
     )
 {
-     $translated_text_array = explode( '¨', $text );
+    $translated_text_array = explode( '¨', $text );
 
-     $translation = new stdClass();
+    $translation = new stdClass();
     $translation->Specifier = $default_language_tag;
     $translation->Data = $translated_text_array[ 0 ];
 
-     $translation_array = [];
+    $translation_array = [];
     array_push( $translation_array, $translation );
 
-    for (  $translated_text_index = 1;
+    for ( $translated_text_index = 1;
           $translated_text_index < count( $translated_text_array );
           ++$translated_text_index )
     {
-         $translated_text = $translated_text_array[ $translated_text_index ];
-         $colon_character_index = strpos( $translated_text, ":" );
+        $translated_text = $translated_text_array[ $translated_text_index ];
+        $colon_character_index = strpos( $translated_text, ":" );
 
         if ( $colon_character_index !== false )
         {
@@ -166,17 +166,17 @@ function GetMultilingualText(
     array &$translation_array
     )
 {
-     $multilingual_text = "";
+    $multilingual_text = "";
 
     if ( count( $translation_array ) > 0 )
     {
         $multilingual_text = $translation_array[ 0 ]->Data;
 
-        for (  $translation_index = 1;
+        for ( $translation_index = 1;
               $translation_index < count( $translation_array );
               ++$translation_index )
         {
-             $translation = $translation_array[ $translation_index ];
+            $translation = $translation_array[ $translation_index ];
 
             $multilingual_text .= "¨" . $translation->Specifier . ":" . $translation->Data;
         }

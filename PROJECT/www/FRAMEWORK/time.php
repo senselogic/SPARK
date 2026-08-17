@@ -37,7 +37,7 @@ function GetVersionTimestamp(
 function GetCurrentMillisecondTimestamp(
     )
 {
-     $part_array = explode( ' ', microtime() );
+    $part_array = explode( ' ', microtime() );
 
     return $part_array[ 1 ] . substr( $part_array[ 0 ] . '00000', 2, 3 );
 }
@@ -47,7 +47,7 @@ function GetCurrentMillisecondTimestamp(
 function GetCurrentMicrosecondTimestamp(
     )
 {
-     $part_array = explode( ' ', microtime() );
+    $part_array = explode( ' ', microtime() );
 
     return $part_array[ 1 ] . substr( $part_array[ 0 ] . '00000000', 2, 6 );
 }
@@ -108,7 +108,7 @@ function GetDateTimeFromTimestampAndTimeZone(
     string $time_zone
     )
 {
-     $date_time = new DateTime( '@' . $timestamp );
+    $date_time = new DateTime( '@' . $timestamp );
     $date_time->setTimezone( new DateTimeZone( $time_zone ) );
 
     return $date_time->format( 'Y-m-d H:i:s' );
@@ -121,7 +121,7 @@ function GetDateFromTimestampAndTimeZone(
     string $time_zone
     )
 {
-     $date_time = new DateTime( '@' . $timestamp );
+    $date_time = new DateTime( '@' . $timestamp );
     $date_time->setTimezone( new DateTimeZone( $time_zone ) );
 
     return $date_time->format( 'Y-m-d' );
@@ -134,7 +134,7 @@ function GetTimeFromTimestampAndTimeZone(
     string $time_zone
     )
 {
-     $date_time = new DateTime( '@' . $timestamp );
+    $date_time = new DateTime( '@' . $timestamp );
     $date_time->setTimezone( new DateTimeZone( $time_zone ) );
 
     return $date_time->format( 'H:i:s' );
@@ -148,7 +148,7 @@ function GetTimeZoneFromLocation(
     string $country_code
     )
 {
-     $time_shift = max( min( ( int )round( $longitude / 15.0 ), 12 ), -12 );
+    $time_shift = max( min( ( int )round( $longitude / 15.0 ), 12 ), -12 );
 
     if ( $time_shift >= 12 )
     {

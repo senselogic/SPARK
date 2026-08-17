@@ -10,7 +10,7 @@ function GetTuid(
     }
     else
     {
-         $hash = md5( $text, true );
+        $hash = md5( $text, true );
 
         return str_replace( [ '+', '/', '=' ], [ '-', '_', '' ], base64_encode( $hash ) );
     }
@@ -28,7 +28,7 @@ function GetUuid(
     }
     else
     {
-         $hash = md5( $text );
+        $hash = md5( $text );
 
         return
             substr( $hash, 0, 8 )
@@ -66,18 +66,18 @@ function GetBasilValueText(
         }
         else
         {
-             $value_text_array = [];
+            $value_text_array = [];
 
             if ( array_keys( $value) !== range( 0, count( $value ) - 1 ) )
             {
-                foreach ( $value as  $key =>  $element )
+                foreach ( $value as $key => $element )
                 {
                     array_push( $value_text_array, '{ ' . GetBasilValueText( $key ) . ' ~ ' . GetBasilValueText( $element ) . ' }' );
                 }
             }
             else
             {
-                foreach ( $value as  $element )
+                foreach ( $value as $element )
                 {
                     array_push( $value_text_array, GetBasilValueText( $element ) );
                 }
@@ -88,7 +88,7 @@ function GetBasilValueText(
     }
     else
     {
-         $value_text = GetBasilText( $value );
+        $value_text = GetBasilText( $value );
 
         $value_text = ReplacePrefix( $value_text, '#', '\\#' );
         $value_text = ReplacePrefix( $value_text, '%', '\\%' );
@@ -131,24 +131,24 @@ function GetBasilTableText(
     array &$new_id_array
     )
 {
-     $column_array = GetDatabaseColumnArray( $table_name );
-     $column_by_name_map = GetDatabaseColumnByNameMap( $column_array );
+    $column_array = GetDatabaseColumnArray( $table_name );
+    $column_by_name_map = GetDatabaseColumnByNameMap( $column_array );
 
-     $statement = GetDatabaseStatement( 'select * from `' . $table_name . '`' );
+    $statement = GetDatabaseStatement( 'select * from `' . $table_name . '`' );
 
     if ( !$statement->execute() )
     {
         var_dump( $statement->errorInfo() );
     }
 
-     $basil_table_text = '';
-     $basil_row_text_array = [];
+    $basil_table_text = '';
+    $basil_row_text_array = [];
 
-    while (  $column_array = $statement->fetch( PDO::FETCH_ASSOC ) )
+    while ( $column_array = $statement->fetch( PDO::FETCH_ASSOC ) )
     {
-         $column_name_array = array_keys( $column_array );
-         $column_value_array = array_values( $column_array );
-         $column_value_count = count( $column_value_array );
+        $column_name_array = array_keys( $column_array );
+        $column_value_array = array_values( $column_array );
+        $column_value_count = count( $column_value_array );
 
         if ( $basil_table_text === '' )
         {
@@ -157,11 +157,11 @@ function GetBasilTableText(
                   . '    ' . implode( ' ', $column_name_array ) . "\n\n";
         }
 
-         $basil_row_text = '';
-         $id_value = '';
-         $id_value_character_count = 0;
+        $basil_row_text = '';
+        $id_value = '';
+        $id_value_character_count = 0;
 
-        for (  $column_value_index = 0;
+        for ( $column_value_index = 0;
               $column_value_index < $column_value_count;
               ++$column_value_index )
         {
@@ -174,8 +174,8 @@ function GetBasilTableText(
                 $basil_row_text .= '            ~ ';
             }
 
-             $column_name = $column_name_array[ $column_value_index ];
-             $column_value = $column_value_array[ $column_value_index ];
+            $column_name = $column_name_array[ $column_value_index ];
+            $column_value = $column_value_array[ $column_value_index ];
 
             $basil_row_text .= GetBasilColumnText( $column_value, $column_by_name_map[ $column_name ] ) . "\n";
 
@@ -199,12 +199,12 @@ function GetBasilTableText(
                       && ( strtolower( $column_name ) === 'slug'
                            || strtolower( $column_name ) === 'code' ) )
             {
-                foreach ( [ $column_value, $column_value . '-' . str_replace( '_', '-', strtolower( $table_name ) ) ] as  $slug )
+                foreach ( [ $column_value, $column_value . '-' . str_replace( '_', '-', strtolower( $table_name ) ) ] as $slug )
                 {
                     if ( $id_value_character_count === 22 )
                     {
-                         $old_id = GetTuid( $slug );
-                         $new_id = '%' . $slug;
+                        $old_id = GetTuid( $slug );
+                        $new_id = '%' . $slug;
                     }
                     else if ( $id_value_character_count === 36 )
                     {
@@ -237,11 +237,11 @@ function GetBasilDatabaseText(
     array $table_name_array
     )
 {
-     $old_id_array = [];
-     $new_id_array = [];
-     $basil_database_text = '';
+    $old_id_array = [];
+    $new_id_array = [];
+    $basil_database_text = '';
 
-    foreach ( $table_name_array as  $table_name )
+    foreach ( $table_name_array as $table_name )
     {
         $basil_database_text
             .= GetBasilTableText( $table_name, $old_id_array, $new_id_array ) . "\n";

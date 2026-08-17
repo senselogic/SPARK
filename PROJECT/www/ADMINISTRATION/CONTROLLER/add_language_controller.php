@@ -33,4 +33,4 @@ class ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $add_language_controller = new ADD_LANGUAGE_CONTROLLER(  $language_code );
+$add_language_controller = new ADD_LANGUAGE_CONTROLLER( $language_code );

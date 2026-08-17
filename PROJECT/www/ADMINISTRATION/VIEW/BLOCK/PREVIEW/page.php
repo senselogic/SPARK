@@ -3,7 +3,7 @@
         <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
     </div>
     <div class="form-field-value">
-        <input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText(  $page->Route ) ); ?>" is-readonly></input-component>
+        <input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $page->Route ) ); ?>" is-readonly></input-component>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :

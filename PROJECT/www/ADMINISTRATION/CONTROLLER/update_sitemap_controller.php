@@ -32,27 +32,27 @@ class UPDATE_SITEMAP_CONTROLLER extends CONTROLLER
             EchoText( '    <div class="color-black" style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%">' );
             EchoStyledLine( 'Generating sitemap...', 'font-size: 1.5rem', 'color-blue', '        ' );
 
-             $modification_date = GetCurrentDate();
-             $page_array = GetDatabasePageArray();
+            $modification_date = GetCurrentDate();
+            $page_array = GetDatabasePageArray();
 
-             $url_array = [];
+            $url_array = [];
 
-            foreach ( $page_array as  $page )
+            foreach ( $page_array as $page )
             {
                 if ( count( $page->LanguageCodeArray ) > 0
                      && !HasPrefix( $page->Route, "http:" )
                      && !HasPrefix( $page->Route, "https:" ) )
                 {
-                     $canonical_page_route = RemoveSuffix( '/' . $page->Route, '/' );
+                    $canonical_page_route = RemoveSuffix( '/' . $page->Route, '/' );
 
                     if ( $canonical_page_route === '/home' )
                     {
-                         $canonical_page_route = '';
+                        $canonical_page_route = '';
                     }
 
-                     $url = "  <url>\n";
+                    $url = "  <url>\n";
 
-                    foreach ( $page->LanguageCodeArray as  $language_index =>  $language_code )
+                    foreach ( $page->LanguageCodeArray as $language_index => $language_code )
                     {
                         if ( $language_index === 0 )
                         {
@@ -86,8 +86,8 @@ class UPDATE_SITEMAP_CONTROLLER extends CONTROLLER
 
             SortArrayByAscendingNaturalKey( $url_array );
 
-             $sitemap_file_path = 'sitemap.xml';
-             $sitemap_file_text
+            $sitemap_file_path = 'sitemap.xml';
+            $sitemap_file_text
                 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                   . "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n"
                   . JoinArray( $url_array, '' )
@@ -108,4 +108,4 @@ class UPDATE_SITEMAP_CONTROLLER extends CONTROLLER
 
 ShowErrors();
 
- $update_sitemap_controller = new UPDATE_SITEMAP_CONTROLLER(  $language_code );
+$update_sitemap_controller = new UPDATE_SITEMAP_CONTROLLER( $language_code );

@@ -17,9 +17,9 @@ class DO_ADD_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
-             $id = GetPostValue( 'Id' );
-             $slug = GetPostValue( 'Slug' );
-             $name = GetPostValue( 'Name' );
+            $id = GetPostValue( 'Id' );
+            $slug = GetPostValue( 'Slug' );
+            $name = GetPostValue( 'Name' );
 
             AddDatabaseBlockType( $id, $slug, $name );
 
@@ -30,4 +30,4 @@ class DO_ADD_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_block_type_controller = new DO_ADD_BLOCK_TYPE_CONTROLLER(  $language_code );
+$do_add_block_type_controller = new DO_ADD_BLOCK_TYPE_CONTROLLER( $language_code );

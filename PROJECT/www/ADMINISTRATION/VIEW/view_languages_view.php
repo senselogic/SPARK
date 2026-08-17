@@ -3,9 +3,9 @@
 <div id="view-languages-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "LanguageFilter"; ?>
+            <?php $filter_name = "LanguageFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php  $list_mode_name = "LanguageListMode"; ?>
+            <?php $list_mode_name = "LanguageListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/language/add">
@@ -30,7 +30,7 @@
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
-            <?php foreach ( $this->LanguageArray as  $language ) { ?>
+            <?php foreach ( $this->LanguageArray as $language ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $language->Code ) ); ?>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $language->Text, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $language->Text, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -70,7 +70,7 @@
         </div>
     </div>
     <div class="card-list is-hidden">
-        <?php foreach ( $this->LanguageArray as  $language ) { ?>
+        <?php foreach ( $this->LanguageArray as $language ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container" data-is-row data-table-name="LANGUAGE">

@@ -36,4 +36,4 @@ class EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_language_controller = new EDIT_LANGUAGE_CONTROLLER(  $language_code,  $language_id );
+$edit_language_controller = new EDIT_LANGUAGE_CONTROLLER( $language_code, $language_id );

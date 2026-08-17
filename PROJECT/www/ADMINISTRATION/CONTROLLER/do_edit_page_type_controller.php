@@ -18,8 +18,8 @@ class DO_EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-             $slug = GetPostValue( 'Slug' );
-             $name = GetPostValue( 'Name' );
+            $slug = GetPostValue( 'Slug' );
+            $name = GetPostValue( 'Name' );
 
             SetDatabasePageType( $page_type_id, $slug, $name );
 
@@ -30,4 +30,4 @@ class DO_EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_page_type_controller = new DO_EDIT_PAGE_TYPE_CONTROLLER(  $language_code,  $page_type_id );
+$do_edit_page_type_controller = new DO_EDIT_PAGE_TYPE_CONTROLLER( $language_code, $page_type_id );

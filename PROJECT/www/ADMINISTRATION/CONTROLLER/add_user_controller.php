@@ -33,4 +33,4 @@ class ADD_USER_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $add_user_controller = new ADD_USER_CONTROLLER(  $language_code );
+$add_user_controller = new ADD_USER_CONTROLLER( $language_code );

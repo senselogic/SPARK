@@ -35,4 +35,4 @@ class VIEW_BLOCK_TYPES_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $view_block_types_controller = new VIEW_BLOCK_TYPES_CONTROLLER(  $language_code );
+$view_block_types_controller = new VIEW_BLOCK_TYPES_CONTROLLER( $language_code );

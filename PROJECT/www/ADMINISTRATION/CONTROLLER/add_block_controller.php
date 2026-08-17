@@ -33,4 +33,4 @@ class ADD_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $add_block_controller = new ADD_BLOCK_CONTROLLER(  $language_code );
+$add_block_controller = new ADD_BLOCK_CONTROLLER( $language_code );

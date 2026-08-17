@@ -3,16 +3,16 @@
 function GetDatabaseLanguageArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Code`, `Number`, `Text`, `IsActive` from `LANGUAGE` order by `Number` asc' );
+    $statement = GetDatabaseStatement( 'select `Id`, `Code`, `Number`, `Text`, `IsActive` from `LANGUAGE` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
         var_dump( $statement->errorInfo() );
     }
 
-     $language_array = [];
+    $language_array = [];
 
-    while (  $language = $statement->fetchObject() )
+    while ( $language = $statement->fetchObject() )
     {
         $language->Number = ( float )( $language->Number );
         $language->IsActive = ( int )( $language->IsActive );
@@ -28,7 +28,7 @@ function GetDatabaseLanguageById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Code`, `Number`, `Text`, `IsActive` from `LANGUAGE` where `Id` = ? limit 1' );
+    $statement = GetDatabaseStatement( 'select `Id`, `Code`, `Number`, `Text`, `IsActive` from `LANGUAGE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -36,7 +36,7 @@ function GetDatabaseLanguageById(
         var_dump( $statement->errorInfo() );
     }
 
-     $language = $statement->fetchObject();
+    $language = $statement->fetchObject();
 
     if ( $language )
     {
@@ -57,7 +57,7 @@ function AddDatabaseLanguage(
     bool $is_active
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `LANGUAGE` ( `Id`, `Code`, `Number`, `Text`, `IsActive` ) values ( ?, ?, ?, ?, ? )' );
+    $statement = GetDatabaseStatement( 'insert into `LANGUAGE` ( `Id`, `Code`, `Number`, `Text`, `IsActive` ) values ( ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $code, PDO::PARAM_STR );
     $statement->bindParam( 3, $number, PDO::PARAM_STR );
@@ -82,7 +82,7 @@ function PutDatabaseLanguage(
     bool $is_active
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `LANGUAGE` ( `Id`, `Code`, `Number`, `Text`, `IsActive` ) values ( ?, ?, ?, ?, ? )' );
+    $statement = GetDatabaseStatement( 'replace into `LANGUAGE` ( `Id`, `Code`, `Number`, `Text`, `IsActive` ) values ( ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $code, PDO::PARAM_STR );
     $statement->bindParam( 3, $number, PDO::PARAM_STR );
@@ -107,7 +107,7 @@ function SetDatabaseLanguage(
     bool $is_active
     )
 {
-     $statement = GetDatabaseStatement( 'update `LANGUAGE` set `Code` = ?, `Number` = ?, `Text` = ?, `IsActive` = ? where Id = ?' );
+    $statement = GetDatabaseStatement( 'update `LANGUAGE` set `Code` = ?, `Number` = ?, `Text` = ?, `IsActive` = ? where Id = ?' );
     $statement->bindParam( 1, $code, PDO::PARAM_STR );
     $statement->bindParam( 2, $number, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
@@ -126,7 +126,7 @@ function RemoveDatabaseLanguageById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'delete from `LANGUAGE` where `Id` = ?' );
+    $statement = GetDatabaseStatement( 'delete from `LANGUAGE` where `Id` = ?' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -141,9 +141,9 @@ function GetLanguageArrayByCodeMap(
     array &$language_array
     )
 {
-     $language_array_by_code_map = [];
+    $language_array_by_code_map = [];
 
-    foreach ( $language_array as  $language )
+    foreach ( $language_array as $language )
     {
         if ( !isset( $language_array_by_code_map[ $language->Code ] ) )
         {
@@ -165,9 +165,9 @@ function GetLanguageArrayByCode(
     string $code
     )
 {
-     $language_array_by_code = [];
+    $language_array_by_code = [];
 
-    foreach ( $language_array as  $language )
+    foreach ( $language_array as $language )
     {
         if ( $language->Code === $code )
         {
@@ -184,9 +184,9 @@ function GetLanguageByCodeMap(
     array &$language_array
     )
 {
-     $language_by_code_map = [];
+    $language_by_code_map = [];
 
-    foreach ( $language_array as  $language )
+    foreach ( $language_array as $language )
     {
         $language_by_code_map[ $language->Code ] = $language;
     }

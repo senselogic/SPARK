@@ -16,16 +16,16 @@ function GetSqlTableText(
     string $table_name
     )
 {
-     $column_array = GetDatabaseColumnArray( $table_name );
-     $column_by_name_map = GetDatabaseColumnByNameMap( $column_array );
+    $column_array = GetDatabaseColumnArray( $table_name );
+    $column_by_name_map = GetDatabaseColumnByNameMap( $column_array );
 
-     $sql_table_text
+    $sql_table_text
         = 'drop table if exists `' . DatabaseName . '`.`' . strtoupper( $table_name ) . "`;\n\n"
           . 'create table if not exists `' . DatabaseName . '`.`' . strtoupper( $table_name ) . "`(\n";
 
-     $primary_key_column_name_array = [];
+    $primary_key_column_name_array = [];
 
-    foreach ( $column_array as  $column )
+    foreach ( $column_array as $column )
     {
         $sql_table_text
             .= '    `' . $column->Name . '` ' . $column->Type . ( $column->IsNullable ? '' : ' not' ) . " null,\n";
@@ -40,22 +40,22 @@ function GetSqlTableText(
         .= '    primary key (' . implode( ', ', $primary_key_column_name_array ) . ")\n"
             . "    ) engine = InnoDB;\n\n";
 
-     $statement = GetDatabaseStatement( 'select * from `' . $table_name . '`' );
+    $statement = GetDatabaseStatement( 'select * from `' . $table_name . '`' );
 
     if ( !$statement->execute() )
     {
         var_dump( $statement->errorInfo() );
     }
 
-     $sql_row_text_array = [];
+    $sql_row_text_array = [];
 
-    while (  $column_array = $statement->fetch( PDO::FETCH_ASSOC ) )
+    while ( $column_array = $statement->fetch( PDO::FETCH_ASSOC ) )
     {
-         $column_name_array = array_keys( $column_array );
-         $column_value_array = array_values( $column_array );
-         $column_value_count = count( $column_value_array );
+        $column_name_array = array_keys( $column_array );
+        $column_value_array = array_values( $column_array );
+        $column_value_count = count( $column_value_array );
 
-         $sql_row_text
+        $sql_row_text
             = 'replace into `' . DatabaseName . '`.`' . strtoupper( $table_name ) . "`\n"
               . "    (\n"
               . "        `" . implode( '`, `', $column_name_array ) . "`\n"
@@ -63,7 +63,7 @@ function GetSqlTableText(
               . "    values\n"
               . "    (\n";
 
-        for (  $column_value_index = 0;
+        for ( $column_value_index = 0;
               $column_value_index < $column_value_count;
               ++$column_value_index )
         {
@@ -97,9 +97,9 @@ function GetSqlDatabaseText(
     array $table_name_array
     )
 {
-     $sql_database_text = '';
+    $sql_database_text = '';
 
-    foreach ( $table_name_array as  $table_name )
+    foreach ( $table_name_array as $table_name )
     {
         $sql_database_text
             .= GetSqlTableText( $table_name ) . "\n";

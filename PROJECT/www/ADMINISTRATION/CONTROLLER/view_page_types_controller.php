@@ -35,4 +35,4 @@ class VIEW_PAGE_TYPES_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $view_page_types_controller = new VIEW_PAGE_TYPES_CONTROLLER(  $language_code );
+$view_page_types_controller = new VIEW_PAGE_TYPES_CONTROLLER( $language_code );

@@ -16,10 +16,10 @@ class UPLOAD_VIDEO_CONTROLLER extends CONTROLLER
 
         if ( HasUploadedFile( 'File' ) )
         {
-             $source_file_path = GetUploadedFilePath( 'File' );
-             $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
-             $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
-             $target_file_path = GetBaseFolderName() . '/upload/video/' . $target_file_name;
+            $source_file_path = GetUploadedFilePath( 'File' );
+            $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
+            $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
+            $target_file_path = GetBaseFolderName() . '/upload/video/' . $target_file_name;
 
             if ( CopyFile( $source_file_path, $target_file_path . '.small.mp4' )
                  && CopyFile( $source_file_path, $target_file_path . '.wide.mp4' )
@@ -38,4 +38,4 @@ class UPLOAD_VIDEO_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $upload_video_controller = new UPLOAD_VIDEO_CONTROLLER(  $language_code );
+$upload_video_controller = new UPLOAD_VIDEO_CONTROLLER( $language_code );

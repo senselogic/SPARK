@@ -3,9 +3,9 @@
 <div id="view-contacts-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "ContactFilter"; ?>
+            <?php $filter_name = "ContactFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php  $list_mode_name = "ContactListMode"; ?>
+            <?php $list_mode_name = "ContactListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/contact/add">
@@ -39,7 +39,7 @@
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
-            <?php foreach ( $this->ContactArray as  $contact ) { ?>
+            <?php foreach ( $this->ContactArray as $contact ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>
@@ -79,7 +79,7 @@
         </div>
     </div>
     <div class="card-list is-hidden">
-        <?php foreach ( $this->ContactArray as  $contact ) { ?>
+        <?php foreach ( $this->ContactArray as $contact ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container" data-is-row data-table-name="CONTACT">

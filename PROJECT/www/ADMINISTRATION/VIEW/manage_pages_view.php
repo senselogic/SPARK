@@ -2,7 +2,7 @@
 <div id="manage-pages-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "PageFilter"; ?>
+            <?php $filter_name = "PageFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/page/add">
@@ -10,7 +10,7 @@
             <?php } ?>
         </div>
     </div>
-    <?php foreach ( $this->PageArray as  $page ) { ?>
+    <?php foreach ( $this->PageArray as $page ) { ?>
         <div class="page-section form-section filter-row">
             <?php
                 require __DIR__ . '/' . 'BLOCK/PREVIEW/page.php';

@@ -70,13 +70,18 @@ function WriteCaptchaImage(
     int text_minimum_blue_component = 0,
     int text_maximum_red_component = 92,
     int text_maximum_green_component = 92,
-    int text_maximum_blue_component = 92
+    int text_maximum_blue_component = 92,
+    int background_opacity = 255
     )
 {
     var character_count = strlen( captcha );
     var image_width = character_count * 20 + 10;
     var image_height = 40;
     var image = imagecreatetruecolor( image_width, image_height );
+    var background_alpha = ( int )( round( ( 255 - background_opacity ) * 127 / 255 ) );
+
+    imagealphablending( image, false );
+    imagesavealpha( image, true );
 
     imagefilledrectangle(
         image,
@@ -84,13 +89,16 @@ function WriteCaptchaImage(
         0,
         image_width,
         image_height,
-        imagecolorallocate(
+        imagecolorallocatealpha(
             image,
             background_red_component,
             background_green_component,
-            background_blue_component
+            background_blue_component,
+            background_alpha
             )
         );
+
+    imagealphablending( image, true );
 
     for ( var slash_index = 0;
           slash_index < slash_count;

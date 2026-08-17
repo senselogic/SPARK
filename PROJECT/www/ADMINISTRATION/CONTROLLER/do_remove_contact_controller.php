@@ -27,4 +27,4 @@ class DO_REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_contact_controller = new DO_REMOVE_CONTACT_CONTROLLER(  $language_code,  $contact_id );
+$do_remove_contact_controller = new DO_REMOVE_CONTACT_CONTROLLER( $language_code, $contact_id );

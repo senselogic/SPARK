@@ -33,4 +33,4 @@ class CONNECT_USER_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $connect_user_controller = new CONNECT_USER_CONTROLLER(  $language_code );
+$connect_user_controller = new CONNECT_USER_CONTROLLER( $language_code );

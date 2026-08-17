@@ -17,9 +17,9 @@ class DO_ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
-             $id = GetPostValue( 'Id' );
-             $slug = GetPostValue( 'Slug' );
-             $text = GetPostValue( 'Text' );
+            $id = GetPostValue( 'Id' );
+            $slug = GetPostValue( 'Slug' );
+            $text = GetPostValue( 'Text' );
 
             AddDatabaseText( $id, $slug, $text );
 
@@ -30,4 +30,4 @@ class DO_ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_text_controller = new DO_ADD_TEXT_CONTROLLER(  $language_code );
+$do_add_text_controller = new DO_ADD_TEXT_CONTROLLER( $language_code );

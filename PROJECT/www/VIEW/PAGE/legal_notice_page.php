@@ -1,6 +1,6 @@
 
 
-<div id="<?php echo  $page->Slug; ?>" class="page">
+<div id="<?php echo $page->Slug; ?>" class="page">
     <?php require __DIR__ . '/' . '../BLOCK/header_menu.php'; ?>
     <?php require __DIR__ . '/' . '../BLOCK/page_heading.php'; ?>
     <?php require __DIR__ . '/' . '../BLOCK/page_block_list.php'; ?>

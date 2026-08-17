@@ -28,4 +28,4 @@ class SHOW_HOME_MENU_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $show_home_menu_controller = new SHOW_HOME_MENU_CONTROLLER();
+$show_home_menu_controller = new SHOW_HOME_MENU_CONTROLLER();

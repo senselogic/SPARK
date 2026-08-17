@@ -3,9 +3,9 @@
 <div id="view-connections-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "ConnectionFilter"; ?>
+            <?php $filter_name = "ConnectionFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php  $list_mode_name = "ConnectionListMode"; ?>
+            <?php $list_mode_name = "ConnectionListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/connection/add">
@@ -30,7 +30,7 @@
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
-            <?php foreach ( $this->ConnectionArray as  $connection ) { ?>
+            <?php foreach ( $this->ConnectionArray as $connection ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $connection->BrowserAddress ) ); ?>
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="card-list is-hidden">
-        <?php foreach ( $this->ConnectionArray as  $connection ) { ?>
+        <?php foreach ( $this->ConnectionArray as $connection ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container" data-is-row data-table-name="CONNECTION">

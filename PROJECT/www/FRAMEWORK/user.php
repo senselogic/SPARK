@@ -1,6 +1,6 @@
 <?php // -- VARIABLES
 
- $UserRoleArray = [ 'guest', 'assistant', 'contributor', 'writer', 'author', 'publisher', 'publisher', 'supervisor', 'manager', 'director', 'administrator' ];
+$UserRoleArray = [ 'guest', 'assistant', 'contributor', 'writer', 'author', 'publisher', 'publisher', 'supervisor', 'manager', 'director', 'administrator' ];
 
 // -- FUNCTIONS
 
@@ -23,7 +23,7 @@ function GetUserRoleIndex(
     global
         $UserRoleArray;
 
-     $user_role_index = array_search( $user_role, $UserRoleArray, true );
+    $user_role_index = array_search( $user_role, $UserRoleArray, true );
 
     if ( $user_role_index === false )
     {

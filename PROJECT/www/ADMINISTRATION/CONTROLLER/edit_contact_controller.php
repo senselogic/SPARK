@@ -36,4 +36,4 @@ class EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_contact_controller = new EDIT_CONTACT_CONTROLLER(  $language_code,  $contact_id );
+$edit_contact_controller = new EDIT_CONTACT_CONTROLLER( $language_code, $contact_id );

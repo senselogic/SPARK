@@ -72,11 +72,11 @@
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
             <div class="form-container" data-is-row data-table-name="USER">
                 <?php
-                     $field_name = 'Id';
+                    $field_name = 'Id';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -90,11 +90,11 @@
                     <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Email';
+                    $field_name = 'Email';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -108,11 +108,11 @@
                     <input-component class="form-component" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Pseudonym';
+                    $field_name = 'Pseudonym';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -126,11 +126,11 @@
                     <input-component class="form-component" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Password';
+                    $field_name = 'Password';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -144,11 +144,11 @@
                     <input-component class="form-component" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Role';
+                    $field_name = 'Role';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {

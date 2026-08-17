@@ -16,10 +16,10 @@ class UPLOAD_DOCUMENT_CONTROLLER extends CONTROLLER
 
         if ( HasUploadedFile( 'File' ) )
         {
-             $source_file_path = GetUploadedFilePath( 'File' );
-             $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
-             $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
-             $target_file_path = GetBaseFolderName() . '/upload/document/' . $target_file_name;
+            $source_file_path = GetUploadedFilePath( 'File' );
+            $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
+            $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
+            $target_file_path = GetBaseFolderName() . '/upload/document/' . $target_file_name;
 
             if ( MoveUploadedFile( $source_file_path, $target_file_path ) )
             {
@@ -36,4 +36,4 @@ class UPLOAD_DOCUMENT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $upload_document_controller = new UPLOAD_DOCUMENT_CONTROLLER(  $language_code );
+$upload_document_controller = new UPLOAD_DOCUMENT_CONTROLLER( $language_code );

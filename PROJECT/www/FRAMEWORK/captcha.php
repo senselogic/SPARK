@@ -15,10 +15,10 @@ function GetCaptchaHash(
     string $alphabet = 'ABCDEFGHJKLMNPQRSUVWXY23456789'
     )
 {
-     $hash = 0;
-     $character_count = strlen( $captcha );
+    $hash = 0;
+    $character_count = strlen( $captcha );
 
-    for (  $character_index = 0;
+    for ( $character_index = 0;
           $character_index < $character_count;
           ++$character_index )
     {
@@ -70,13 +70,18 @@ function WriteCaptchaImage(
     int $text_minimum_blue_component = 0,
     int $text_maximum_red_component = 92,
     int $text_maximum_green_component = 92,
-    int $text_maximum_blue_component = 92
+    int $text_maximum_blue_component = 92,
+    int $background_opacity = 255
     )
 {
-     $character_count = strlen( $captcha );
-     $image_width = $character_count * 20 + 10;
-     $image_height = 40;
-     $image = imagecreatetruecolor( $image_width, $image_height );
+    $character_count = strlen( $captcha );
+    $image_width = $character_count * 20 + 10;
+    $image_height = 40;
+    $image = imagecreatetruecolor( $image_width, $image_height );
+    $background_alpha = ( int )( round( ( 255 - $background_opacity ) * 127 / 255 ) );
+
+    imagealphablending( $image, false );
+    imagesavealpha( $image, true );
 
     imagefilledrectangle(
         $image,
@@ -84,15 +89,18 @@ function WriteCaptchaImage(
         0,
         $image_width,
         $image_height,
-        imagecolorallocate(
+        imagecolorallocatealpha(
             $image,
             $background_red_component,
             $background_green_component,
-            $background_blue_component
+            $background_blue_component,
+            $background_alpha
             )
         );
 
-    for (  $slash_index = 0;
+    imagealphablending( $image, true );
+
+    for ( $slash_index = 0;
           $slash_index < $slash_count;
           ++$slash_index )
     {
@@ -111,7 +119,7 @@ function WriteCaptchaImage(
             );
     }
 
-    for (  $character_index = 0;
+    for ( $character_index = 0;
           $character_index < $character_count;
           ++$character_index )
     {
@@ -149,13 +157,13 @@ function IsValidCaptcha(
     }
     else
     {
-         $character_count = strlen( $captcha );
+        $character_count = strlen( $captcha );
 
         if ( strlen( $answer ) === $character_count )
         {
-             $error_count = 0;
+            $error_count = 0;
 
-            for (  $character_index = 0;
+            for ( $character_index = 0;
                   $character_index < $character_count;
                   ++$character_index )
             {

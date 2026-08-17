@@ -3,9 +3,9 @@
 <div id="view-page-types-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "PageTypeFilter"; ?>
+            <?php $filter_name = "PageTypeFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php  $list_mode_name = "PageTypeListMode"; ?>
+            <?php $list_mode_name = "PageTypeListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/page-type/add">
@@ -24,7 +24,7 @@
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
-            <?php foreach ( $this->PageTypeArray as  $page_type ) { ?>
+            <?php foreach ( $this->PageTypeArray as $page_type ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>
@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="card-list is-hidden">
-        <?php foreach ( $this->PageTypeArray as  $page_type ) { ?>
+        <?php foreach ( $this->PageTypeArray as $page_type ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container" data-is-row data-table-name="PAGE_TYPE">

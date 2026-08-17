@@ -205,7 +205,7 @@ function AddFolderPathArray(
     bool $is_recursive = false
     )
 {
-    foreach ( scandir( $folder_path, SCANDIR_SORT_NONE ) as  $file_path )
+    foreach ( scandir( $folder_path, SCANDIR_SORT_NONE ) as $file_path )
     {
         if ( $file_path !== '.'
              && $file_path !== '..' )
@@ -246,7 +246,7 @@ function AddFilePathArray(
     bool $is_recursive = false
     )
 {
-    foreach ( scandir( $folder_path, SCANDIR_SORT_NONE ) as  $file_path )
+    foreach ( scandir( $folder_path, SCANDIR_SORT_NONE ) as $file_path )
     {
         if ( $file_path !== '.'
              && $file_path !== '..' )
@@ -287,16 +287,16 @@ function GetFolderPath(
     string $file_path
     )
 {
-     $file_path_character_count = strlen( $file_path );
-     $last_slash_character_index = strrpos( $file_path, '/' );
+    $file_path_character_count = strlen( $file_path );
+    $last_slash_character_index = strrpos( $file_path, '/' );
 
     if ( $last_slash_character_index === false )
     {
-         $folder_path_character_count = 0;
+        $folder_path_character_count = 0;
     }
     else
     {
-         $folder_path_character_count = $last_slash_character_index + 1;
+        $folder_path_character_count = $last_slash_character_index + 1;
     }
 
     return substr( $file_path, 0, $folder_path_character_count );
@@ -308,16 +308,16 @@ function GetFileName(
     string $file_path
     )
 {
-     $file_path_character_count = strlen( $file_path );
-     $last_slash_character_index = strrpos( $file_path, '/' );
+    $file_path_character_count = strlen( $file_path );
+    $last_slash_character_index = strrpos( $file_path, '/' );
 
     if ( $last_slash_character_index === false )
     {
-         $folder_path_character_count = 0;
+        $folder_path_character_count = 0;
     }
     else
     {
-         $folder_path_character_count = $last_slash_character_index + 1;
+        $folder_path_character_count = $last_slash_character_index + 1;
     }
 
     return substr( $file_path, $folder_path_character_count );
@@ -332,18 +332,18 @@ function GetFilePathCharacterCounts(
     string $file_path
     )
 {
-     $file_path_character_count = strlen( $file_path );
-     $last_slash_character_index = strrpos( $file_path, '/' );
+    $file_path_character_count = strlen( $file_path );
+    $last_slash_character_index = strrpos( $file_path, '/' );
 
     if ( $last_slash_character_index === false )
     {
         $folder_path_character_count = 0;
-         $last_dot_character_index = strrpos( $file_path, '.' );
+        $last_dot_character_index = strrpos( $file_path, '.' );
     }
     else
     {
         $folder_path_character_count = $last_slash_character_index + 1;
-         $last_dot_character_index = strrpos( $file_path, '.', $last_slash_character_index );
+        $last_dot_character_index = strrpos( $file_path, '.', $last_slash_character_index );
     }
 
     if ( $last_dot_character_index === false )
@@ -364,9 +364,9 @@ function GetFileLabel(
     string $file_path
     )
 {
-     $folder_path_character_count = 0;
-     $file_label_character_count = 0;
-     $file_extension_character_count = 0;
+    $folder_path_character_count = 0;
+    $file_label_character_count = 0;
+    $file_extension_character_count = 0;
 
     GetFilePathCharacterCounts(
         $folder_path_character_count,
@@ -384,9 +384,9 @@ function GetFileExtension(
     string $file_path
     )
 {
-     $folder_path_character_count = 0;
-     $file_label_character_count = 0;
-     $file_extension_character_count = 0;
+    $folder_path_character_count = 0;
+    $file_label_character_count = 0;
+    $file_extension_character_count = 0;
 
     GetFilePathCharacterCounts(
         $folder_path_character_count,
@@ -405,9 +405,9 @@ function GetSuffixedFilePath(
     string $file_label_suffix
     )
 {
-     $folder_path_character_count = 0;
-     $file_label_character_count = 0;
-     $file_extension_character_count = 0;
+    $folder_path_character_count = 0;
+    $file_label_character_count = 0;
+    $file_extension_character_count = 0;
 
     GetFilePathCharacterCounts(
         $folder_path_character_count,
@@ -428,9 +428,9 @@ function SplitFilePath(
     string $file_path
     )
 {
-     $folder_path_character_count = 0;
-     $file_label_character_count = 0;
-     $file_extension_character_count = 0;
+    $folder_path_character_count = 0;
+    $file_label_character_count = 0;
+    $file_extension_character_count = 0;
 
     GetFilePathCharacterCounts(
         $folder_path_character_count,

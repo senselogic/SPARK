@@ -36,4 +36,4 @@ class REMOVE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_block_controller = new REMOVE_BLOCK_CONTROLLER(  $language_code,  $block_id );
+$remove_block_controller = new REMOVE_BLOCK_CONTROLLER( $language_code, $block_id );

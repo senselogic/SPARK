@@ -64,7 +64,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         $this->ImagePathArray = [];
 
-        foreach ( $this->PageByIdMap as  $page_id =>  $page )
+        foreach ( $this->PageByIdMap as $page_id => $page )
         {
             if ( property_exists( $page, 'ImagePath' )
                  && $page->ImagePath !== ''
@@ -74,7 +74,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
             }
         }
 
-        foreach ( $this->BlockByIdMap as  $block_id =>  $block )
+        foreach ( $this->BlockByIdMap as $block_id => $block )
         {
             if ( property_exists( $block, 'ImagePath' )
                  && $block->ImagePath !== ''
@@ -94,4 +94,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code,  $route );
+$show_base_controller = new SHOW_BASE_CONTROLLER( $language_code, $route );

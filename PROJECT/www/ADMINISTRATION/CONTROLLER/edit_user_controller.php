@@ -36,4 +36,4 @@ class EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_user_controller = new EDIT_USER_CONTROLLER(  $language_code,  $user_id );
+$edit_user_controller = new EDIT_USER_CONTROLLER( $language_code, $user_id );

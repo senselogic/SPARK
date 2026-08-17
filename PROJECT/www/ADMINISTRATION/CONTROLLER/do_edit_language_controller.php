@@ -18,10 +18,10 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-             $code = GetPostValue( 'Code' );
-             $number = GetPostValue( 'Number' );
-             $text = GetPostValue( 'Text' );
-             $is_active = GetPostValue( 'IsActive' );
+            $code = GetPostValue( 'Code' );
+            $number = GetPostValue( 'Number' );
+            $text = GetPostValue( 'Text' );
+            $is_active = GetPostValue( 'IsActive' );
 
             SetDatabaseLanguage( $language_id, $code, $number, $text, $is_active );
 
@@ -32,4 +32,4 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_language_controller = new DO_EDIT_LANGUAGE_CONTROLLER(  $language_code,  $language_id );
+$do_edit_language_controller = new DO_EDIT_LANGUAGE_CONTROLLER( $language_code, $language_id );

@@ -3,7 +3,7 @@
 function GetDatabaseTextArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Text` from `TEXT`' );
+    $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Text` from `TEXT`' );
 
     if ( !$statement->execute() )
     {
@@ -19,7 +19,7 @@ function GetDatabaseTextById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Text` from `TEXT` where `Id` = ? limit 1' );
+    $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Text` from `TEXT` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -38,7 +38,7 @@ function AddDatabaseText(
     string $text
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `TEXT` ( `Id`, `Slug`, `Text` ) values ( ?, ?, ? )' );
+    $statement = GetDatabaseStatement( 'insert into `TEXT` ( `Id`, `Slug`, `Text` ) values ( ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
@@ -59,7 +59,7 @@ function PutDatabaseText(
     string $text
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `TEXT` ( `Id`, `Slug`, `Text` ) values ( ?, ?, ? )' );
+    $statement = GetDatabaseStatement( 'replace into `TEXT` ( `Id`, `Slug`, `Text` ) values ( ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
@@ -80,7 +80,7 @@ function SetDatabaseText(
     string $text
     )
 {
-     $statement = GetDatabaseStatement( 'update `TEXT` set `Slug` = ?, `Text` = ? where Id = ?' );
+    $statement = GetDatabaseStatement( 'update `TEXT` set `Slug` = ?, `Text` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $text, PDO::PARAM_STR );
     $statement->bindParam( 3, $id, PDO::PARAM_STR );
@@ -97,7 +97,7 @@ function RemoveDatabaseTextById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'delete from `TEXT` where `Id` = ?' );
+    $statement = GetDatabaseStatement( 'delete from `TEXT` where `Id` = ?' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )

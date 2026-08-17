@@ -27,4 +27,4 @@ class DO_REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_user_controller = new DO_REMOVE_USER_CONTROLLER(  $language_code,  $user_id );
+$do_remove_user_controller = new DO_REMOVE_USER_CONTROLLER( $language_code, $user_id );

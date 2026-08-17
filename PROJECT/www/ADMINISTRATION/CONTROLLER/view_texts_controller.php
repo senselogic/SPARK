@@ -35,4 +35,4 @@ class VIEW_TEXTS_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $view_texts_controller = new VIEW_TEXTS_CONTROLLER(  $language_code );
+$view_texts_controller = new VIEW_TEXTS_CONTROLLER( $language_code );

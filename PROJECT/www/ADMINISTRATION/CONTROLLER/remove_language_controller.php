@@ -36,4 +36,4 @@ class REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_language_controller = new REMOVE_LANGUAGE_CONTROLLER(  $language_code,  $language_id );
+$remove_language_controller = new REMOVE_LANGUAGE_CONTROLLER( $language_code, $language_id );

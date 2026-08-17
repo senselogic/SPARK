@@ -35,4 +35,4 @@ class MANAGE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $manage_block_controller = new MANAGE_BLOCK_CONTROLLER(  $block_id );
+$manage_block_controller = new MANAGE_BLOCK_CONTROLLER( $block_id );

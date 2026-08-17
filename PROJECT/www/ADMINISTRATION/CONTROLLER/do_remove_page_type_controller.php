@@ -27,4 +27,4 @@ class DO_REMOVE_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_page_type_controller = new DO_REMOVE_PAGE_TYPE_CONTROLLER(  $language_code,  $page_type_id );
+$do_remove_page_type_controller = new DO_REMOVE_PAGE_TYPE_CONTROLLER( $language_code, $page_type_id );

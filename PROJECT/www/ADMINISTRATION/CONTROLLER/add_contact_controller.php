@@ -33,4 +33,4 @@ class ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $language_code );
+$add_contact_controller = new ADD_CONTACT_CONTROLLER( $language_code );

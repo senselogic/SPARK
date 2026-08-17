@@ -181,11 +181,11 @@ function GetAddedElementNumber(
     int $prior_element_index
     )
 {
-     $prior_value = $element_array[ $prior_element_index ]->Number;
+    $prior_value = $element_array[ $prior_element_index ]->Number;
 
     if ( $prior_element_index + 1 < count( $element_array ) )
     {
-         $next_value = $element_array[ $prior_element_index + 1 ]->Number;
+        $next_value = $element_array[ $prior_element_index + 1 ]->Number;
 
         return ( $prior_value + $next_value ) * 0.5;
     }
@@ -240,9 +240,9 @@ function GetElementByKeyMap(
     string $key_property_name
     )
 {
-     $element_by_key_map = [];
+    $element_by_key_map = [];
 
-    foreach ( $element_array as  $element )
+    foreach ( $element_array as $element )
     {
         if ( property_exists( $element, $key_property_name ) )
         {
@@ -260,13 +260,13 @@ function GetElementArrayByKeyMap(
     string $key_property_name
     )
 {
-     $element_array_by_key_map = [];
+    $element_array_by_key_map = [];
 
-    foreach ( $element_array as  $element )
+    foreach ( $element_array as $element )
     {
         if ( property_exists( $element, $key_property_name ) )
         {
-             $element_key = $element->$key_property_name;
+            $element_key = $element->$key_property_name;
 
             if ( !isset( $element_array_by_key_map[ $element_key ] ) )
             {
@@ -289,9 +289,9 @@ function GetElementPropertyArray(
     string $property_name
     )
 {
-     $element_property_array = [];
+    $element_property_array = [];
 
-    foreach ( $element_array as  $element )
+    foreach ( $element_array as $element )
     {
         array_push( $element_property_array, $element->$property_name );
     }
@@ -305,9 +305,9 @@ function GetUntranslatedElementArray(
     array $element_array
     )
 {
-     $untranslated_element_array = [];
+    $untranslated_element_array = [];
 
-    foreach ( $element_array as  $element )
+    foreach ( $element_array as $element )
     {
         array_push( $untranslated_element_array, GetUntranslatedText( $element ) );
     }

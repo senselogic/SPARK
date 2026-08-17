@@ -56,7 +56,7 @@ function RunDatabaseCommand(
     string $command
     )
 {
-     $statement = GetDatabaseStatement( $command );
+    $statement = GetDatabaseStatement( $command );
 
     if ( !$statement->execute() )
     {
@@ -81,9 +81,9 @@ function GetDatabaseObjectArray(
     $statement
     )
 {
-     $object_array = [];
+    $object_array = [];
 
-    while (  $object = $statement->fetchObject() )
+    while ( $object = $statement->fetchObject() )
     {
         array_push( $object_array, $object );
     }
@@ -97,7 +97,7 @@ function GetDatabaseTableObjectArray(
     string $table_name
     )
 {
-     $statement = GetDatabaseStatement( 'select * from `' . $table_name . '`' );
+    $statement = GetDatabaseStatement( 'select * from `' . $table_name . '`' );
 
     if ( !$statement->execute() )
     {
@@ -112,16 +112,16 @@ function GetDatabaseTableObjectArray(
 function GetDatabaseTableNameArray(
     )
 {
-     $statement = GetDatabaseStatement( 'show tables' );
+    $statement = GetDatabaseStatement( 'show tables' );
 
     if ( !$statement->execute() )
     {
         var_dump( $statement->errorInfo() );
     }
 
-     $table_name_array = [];
+    $table_name_array = [];
 
-    while (  $column_array = $statement->fetch( PDO::FETCH_NUM ) )
+    while ( $column_array = $statement->fetch( PDO::FETCH_NUM ) )
     {
         array_push( $table_name_array, $column_array[ 0 ] );
     }
@@ -137,7 +137,7 @@ function GetDatabaseColumnArray(
     string $table_name
     )
 {
-     $statement
+    $statement
         = GetDatabaseStatement(
             "select * from information_schema.columns where table_schema = '"
             . DatabaseName
@@ -151,12 +151,12 @@ function GetDatabaseColumnArray(
         var_dump( $statement->errorInfo() );
     }
 
-     $column_object_array = GetDatabaseObjectArray( $statement );
-     $column_array = [];
+    $column_object_array = GetDatabaseObjectArray( $statement );
+    $column_array = [];
 
-    foreach ( $column_object_array as  $column_object )
+    foreach ( $column_object_array as $column_object )
     {
-         $column = new stdClass();
+        $column = new stdClass();
         $column->Number = $column_object->ORDINAL_POSITION;
         $column->Name = $column_object->COLUMN_NAME;
         $column->Type = $column_object->COLUMN_TYPE;
@@ -179,9 +179,9 @@ function GetDatabaseColumnByNameMap(
     array &$column_array
     )
 {
-     $column_by_name_map = [];
+    $column_by_name_map = [];
 
-    foreach ( $column_array as  $column )
+    foreach ( $column_array as $column )
     {
         $column_by_name_map[ $column->Name ] = $column;
     }

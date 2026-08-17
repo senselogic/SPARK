@@ -18,8 +18,8 @@ class DO_EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-             $slug = GetPostValue( 'Slug' );
-             $name = GetPostValue( 'Name' );
+            $slug = GetPostValue( 'Slug' );
+            $name = GetPostValue( 'Name' );
 
             SetDatabaseBlockType( $block_type_id, $slug, $name );
 
@@ -30,4 +30,4 @@ class DO_EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_block_type_controller = new DO_EDIT_BLOCK_TYPE_CONTROLLER(  $language_code,  $block_type_id );
+$do_edit_block_type_controller = new DO_EDIT_BLOCK_TYPE_CONTROLLER( $language_code, $block_type_id );

@@ -6,15 +6,15 @@ function IsOpaqueImage(
 {
     imagepalettetotruecolor( $image );
 
-     $width = imagesx( $image );
-     $height = imagesy( $image );
+    $width = imagesx( $image );
+    $height = imagesy( $image );
 
-    for (  $x = 0; $x < $width; ++$x )
+    for ( $x = 0; $x < $width; ++$x )
     {
-        for (  $y = 0; $y < $height; ++$y )
+        for ( $y = 0; $y < $height; ++$y )
         {
-             $color = imagecolorat( $image, $x, $y );
-             $transparency = ( $color >> 24 ) & 0x7F;
+            $color = imagecolorat( $image, $x, $y );
+            $transparency = ( $color >> 24 ) & 0x7F;
 
             if ( $transparency !== 0 )
             {
@@ -54,7 +54,7 @@ function CreateImage(
     bool $image_has_alpha = false
     )
 {
-     $image = imagecreatetruecolor( $width, $height );
+    $image = imagecreatetruecolor( $width, $height );
 
     if ( $image_has_alpha )
     {
@@ -71,9 +71,9 @@ function CreateCopiedImage(
     bool $image_has_alpha = false
     )
 {
-     $width = imagesx( $image );
-     $height = imagesy( $image );
-     $new_image = CreateImage( $width, $height, $image_has_alpha );
+    $width = imagesx( $image );
+    $height = imagesy( $image );
+    $new_image = CreateImage( $width, $height, $image_has_alpha );
 
     imagecopyresampled(
         $new_image,
@@ -100,9 +100,9 @@ function CreateResizedImage(
     bool $image_has_alpha = false
     )
 {
-     $old_width = imagesx( $image );
-     $old_height = imagesy( $image );
-     $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
+    $old_width = imagesx( $image );
+    $old_height = imagesy( $image );
+    $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
 
     imagecopyresampled(
         $new_image,
@@ -130,16 +130,16 @@ function CreateCappedImage(
     bool $image_can_be_upscaled = false
     )
 {
-     $old_width = imagesx( $image );
-     $old_height = imagesy( $image );
+    $old_width = imagesx( $image );
+    $old_height = imagesy( $image );
 
     if ( $old_width > 0
          && $old_height > 0 )
     {
-         $new_width = $old_width;
-         $new_height = $old_height;
+        $new_width = $old_width;
+        $new_height = $old_height;
 
-         $aspect_ratio = $old_width / $old_height;
+        $aspect_ratio = $old_width / $old_height;
 
         if ( $image_can_be_upscaled
              || $new_width > $maximum_width )
@@ -164,7 +164,7 @@ function CreateCappedImage(
             $new_height = 1;
         }
 
-         $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
+        $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
 
         imagecopyresampled(
             $new_image,
@@ -198,14 +198,14 @@ function CreateConstrainedImage(
     bool $image_has_alpha = false
     )
 {
-     $old_width = imagesx( $image );
-     $old_height = imagesy( $image );
+    $old_width = imagesx( $image );
+    $old_height = imagesy( $image );
 
     if ( $old_width > 0
          && $old_height > 0 )
     {
-         $new_width = $old_width;
-         $new_height = $old_height;
+        $new_width = $old_width;
+        $new_height = $old_height;
 
         if ( $new_width < $minimum_width )
         {
@@ -229,7 +229,7 @@ function CreateConstrainedImage(
             $new_width = GetInteger( $old_width * $new_height / $old_height );
         }
 
-         $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
+        $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
 
         imagecopyresampled(
             $new_image,
@@ -260,19 +260,19 @@ function CreateLimitedImage(
     bool $image_has_alpha = false
     )
 {
-     $old_width = imagesx( $image );
-     $old_height = imagesy( $image );
+    $old_width = imagesx( $image );
+    $old_height = imagesy( $image );
 
     if ( $old_width > 0
          && $old_height > 0 )
     {
-         $new_width = $old_width;
-         $new_height = $old_height;
-         $old_pixel_count = $old_width * $old_height;
+        $new_width = $old_width;
+        $new_height = $old_height;
+        $old_pixel_count = $old_width * $old_height;
 
         if ( $old_pixel_count > $maximum_pixel_count )
         {
-             $new_size_ratio = sqrt( $maximum_pixel_count / $old_pixel_count );
+            $new_size_ratio = sqrt( $maximum_pixel_count / $old_pixel_count );
             $new_width = intval( $old_width * $new_size_ratio );
             $new_height = intval( $old_height * $new_size_ratio );
         }
@@ -287,7 +287,7 @@ function CreateLimitedImage(
             $new_height = 1;
         }
 
-         $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
+        $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
 
         imagecopyresampled(
             $new_image,
@@ -319,8 +319,8 @@ function CreateCoveredImage(
     bool $image_has_alpha = false
     )
 {
-     $old_width = imagesx( $image );
-     $old_height = imagesy( $image );
+    $old_width = imagesx( $image );
+    $old_height = imagesy( $image );
 
     if ( $old_width > 0
          && $old_height > 0 )
@@ -335,14 +335,14 @@ function CreateCoveredImage(
             $new_height = 1;
         }
 
-         $copied_width = $old_width;
-         $copied_height = $old_height;
+        $copied_width = $old_width;
+        $copied_height = $old_height;
 
-         $old_aspect_ratio = $old_width / $old_height;
-         $new_aspect_ratio = $new_width / $new_height;
+        $old_aspect_ratio = $old_width / $old_height;
+        $new_aspect_ratio = $new_width / $new_height;
 
-         $copied_width = $old_width;
-         $copied_height = $old_height;
+        $copied_width = $old_width;
+        $copied_height = $old_height;
 
         if ( $new_aspect_ratio < $old_aspect_ratio )
         {
@@ -353,10 +353,10 @@ function CreateCoveredImage(
             $copied_width = intval( $old_height * $new_aspect_ratio + 0.5 );
         }
 
-         $copied_x = intval( ( $old_width - $copied_width ) / 2 );
-         $copied_y = intval( ( $old_height - $copied_height ) / 2 );
+        $copied_x = intval( ( $old_width - $copied_width ) / 2 );
+        $copied_y = intval( ( $old_height - $copied_height ) / 2 );
 
-         $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
+        $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
 
         imagecopyresampled(
             $new_image,
@@ -545,12 +545,12 @@ function DrawCoveredImage(
     float $source_height
     )
 {
-     $cropped_source_column = 0;
-     $cropped_source_row = 0;
-     $cropped_source_width = $source_width;
-     $cropped_source_height = $source_height;
-     $source_aspect_ratio = $source_width / $source_height;
-     $target_aspect_ratio = $target_width / $target_height;
+    $cropped_source_column = 0;
+    $cropped_source_row = 0;
+    $cropped_source_width = $source_width;
+    $cropped_source_height = $source_height;
+    $source_aspect_ratio = $source_width / $source_height;
+    $target_aspect_ratio = $target_width / $target_height;
 
     if ( $source_aspect_ratio > $target_aspect_ratio )
     {
@@ -771,7 +771,7 @@ function DrawJustifiedText(
     {
         do
         {
-             $old_text = $text;
+            $old_text = $text;
             $text = preg_replace( '/<([^>]*?) +([^>]*?)>/', '<$1¨$2>', $old_text );
         }
         while ( $text !== $old_text );
@@ -784,34 +784,34 @@ function DrawJustifiedText(
                   );
     }
 
-     $box = new stdClass();
-     $box->Column = 0;
-     $box->Row = 0;
-     $box->Width = 0;
-     $box->Height = 0;
+    $box = new stdClass();
+    $box->Column = 0;
+    $box->Row = 0;
+    $box->Width = 0;
+    $box->Height = 0;
 
-     $space_bounding_box = imagettfbbox( $font_size, 0, $font_path, ' ' );
-     $space_width = $space_bounding_box[ 2 ] * $space_width_factor;
+    $space_bounding_box = imagettfbbox( $font_size, 0, $font_path, ' ' );
+    $space_width = $space_bounding_box[ 2 ] * $space_width_factor;
 
-     $text_bounding_box = imagettfbbox( $font_size, 0, $font_path, 'AMWbdfhkltjgpqy' );
-     $letter_upper_height = -$text_bounding_box[ 7 ];
-     $letter_lower_height = $text_bounding_box[ 1 ];
-     $letter_height = ( $text_bounding_box[ 1 ] - $text_bounding_box[ 7 ] );
-     $line_height = $letter_height * $line_height_factor;
+    $text_bounding_box = imagettfbbox( $font_size, 0, $font_path, 'AMWbdfhkltjgpqy' );
+    $letter_upper_height = -$text_bounding_box[ 7 ];
+    $letter_lower_height = $text_bounding_box[ 1 ];
+    $letter_height = ( $text_bounding_box[ 1 ] - $text_bounding_box[ 7 ] );
+    $line_height = $letter_height * $line_height_factor;
 
-     $line_index = 0;
-     $line_width_array = [];
+    $line_index = 0;
+    $line_width_array = [];
     $line_width_array[ $line_index ] = 0;
 
-     $word_column = 0;
-     $word_row = 0;
-     $word_text_array = explode( ' ', $text );
-     $word_count = 0;
-     $word_array = [];
-     $word_is_bold = false;
-     $word_is_italic = false;
+    $word_column = 0;
+    $word_row = 0;
+    $word_text_array = explode( ' ', $text );
+    $word_count = 0;
+    $word_array = [];
+    $word_is_bold = false;
+    $word_is_italic = false;
 
-    foreach ( $word_text_array as  $word_text )
+    foreach ( $word_text_array as $word_text )
     {
         if ( $text_has_tags
              && $word_text === '<b>' )
@@ -859,7 +859,7 @@ function DrawJustifiedText(
         else if ( !$text_has_tags
                   || $word_text !== '' )
         {
-             $word = new stdClass();
+            $word = new stdClass();
             $word->Text = $word_text;
             $word->ColorRed = $color_red;
             $word->ColorGreen = $color_green;
@@ -890,7 +890,7 @@ function DrawJustifiedText(
                 }
             }
 
-             $word_bounding_box = imagettfbbox( $word->FontSize, 0, $word->FontPath, $word->Text );
+            $word_bounding_box = imagettfbbox( $word->FontSize, 0, $word->FontPath, $word->Text );
             $word->Width = $word_bounding_box[ 2 ];
             $word->Height = $word_bounding_box[ 1 ];
 
@@ -905,14 +905,14 @@ function DrawJustifiedText(
 
             if ( $word_row + $word->Height <= $canvas_height )
             {
-                 $box_height = $word_row + $letter_height;
+                $box_height = $word_row + $letter_height;
 
                 if ( $box_height > $box->Height )
                 {
                     $box->Height = $box_height;
                 }
 
-                 $line_width = $word_column + $word->Width;
+                $line_width = $word_column + $word->Width;
                 $line_width_array[ $line_index ] = $line_width;
 
                 if ( $line_width > $box->Width )
@@ -1019,7 +1019,7 @@ function ReadAvifImage(
     bool $image_has_alpha = false
     )
 {
-     $image = imagecreatefromavif( $image_url );
+    $image = imagecreatefromavif( $image_url );
 
     if ( $image_has_alpha )
     {
@@ -1069,7 +1069,7 @@ function ReadPngImage(
     bool $image_has_alpha = false
     )
 {
-     $image = imagecreatefrompng( $image_url );
+    $image = imagecreatefrompng( $image_url );
 
     if ( $image_has_alpha )
     {
@@ -1097,7 +1097,7 @@ function ReadWebpImage(
     bool $image_has_alpha = false
     )
 {
-     $image = imagecreatefromwebp( $image_url );
+    $image = imagecreatefromwebp( $image_url );
 
     if ( $image_has_alpha )
     {
@@ -1127,19 +1127,19 @@ function ReadImage(
 {
     if ( HasSuffix( $image_url, '.avif' ) )
     {
-         $image = imagecreatefromavif( $image_url );
+        $image = imagecreatefromavif( $image_url );
     }
     else if ( HasSuffix( $image_url, '.jpg' ) )
     {
-         $image = imagecreatefromjpeg( $image_url );
+        $image = imagecreatefromjpeg( $image_url );
     }
     else if ( HasSuffix( $image_url, '.png' ) )
     {
-         $image = imagecreatefrompng( $image_url );
+        $image = imagecreatefrompng( $image_url );
     }
     else if ( HasSuffix( $image_url, '.webp' ) )
     {
-         $image = imagecreatefromwebp( $image_url );
+        $image = imagecreatefromwebp( $image_url );
     }
     else
     {

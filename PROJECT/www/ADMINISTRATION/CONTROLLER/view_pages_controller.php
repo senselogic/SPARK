@@ -35,4 +35,4 @@ class VIEW_PAGES_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $view_pages_controller = new VIEW_PAGES_CONTROLLER(  $language_code );
+$view_pages_controller = new VIEW_PAGES_CONTROLLER( $language_code );

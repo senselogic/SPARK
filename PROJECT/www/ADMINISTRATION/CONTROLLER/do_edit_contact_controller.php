@@ -18,13 +18,13 @@ class DO_EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-             $name = GetPostValue( 'Name' );
-             $company = GetPostValue( 'Company' );
-             $email = GetPostValue( 'Email' );
-             $phone = GetPostValue( 'Phone' );
-             $subject = GetPostValue( 'Subject' );
-             $message = GetPostValue( 'Message' );
-             $date_time = GetPostValue( 'DateTime' );
+            $name = GetPostValue( 'Name' );
+            $company = GetPostValue( 'Company' );
+            $email = GetPostValue( 'Email' );
+            $phone = GetPostValue( 'Phone' );
+            $subject = GetPostValue( 'Subject' );
+            $message = GetPostValue( 'Message' );
+            $date_time = GetPostValue( 'DateTime' );
 
             SetDatabaseContact( $contact_id, $name, $company, $email, $phone, $subject, $message, $date_time );
 
@@ -35,4 +35,4 @@ class DO_EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_contact_controller = new DO_EDIT_CONTACT_CONTROLLER(  $language_code,  $contact_id );
+$do_edit_contact_controller = new DO_EDIT_CONTACT_CONTROLLER( $language_code, $contact_id );

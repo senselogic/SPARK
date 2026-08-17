@@ -3,9 +3,9 @@
 <div id="view-texts-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "TextFilter"; ?>
+            <?php $filter_name = "TextFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php  $list_mode_name = "TextListMode"; ?>
+            <?php $list_mode_name = "TextListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/text/add">
@@ -24,14 +24,14 @@
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
-            <?php foreach ( $this->TextArray as  $text ) { ?>
+            <?php foreach ( $this->TextArray as $text ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $text->Text, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $text->Text, DefaultLanguageCode ) as $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="card-list is-hidden">
-        <?php foreach ( $this->TextArray as  $text ) { ?>
+        <?php foreach ( $this->TextArray as $text ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container" data-is-row data-table-name="TEXT">

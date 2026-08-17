@@ -3,7 +3,7 @@
 function GetDatabasePageTypeArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE` order by `Name` asc' );
+    $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE` order by `Name` asc' );
 
     if ( !$statement->execute() )
     {
@@ -19,7 +19,7 @@ function GetDatabasePageTypeById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE` where `Id` = ? limit 1' );
+    $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -38,7 +38,7 @@ function AddDatabasePageType(
     string $name
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `PAGE_TYPE` ( `Id`, `Slug`, `Name` ) values ( ?, ?, ? )' );
+    $statement = GetDatabaseStatement( 'insert into `PAGE_TYPE` ( `Id`, `Slug`, `Name` ) values ( ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $name, PDO::PARAM_STR );
@@ -59,7 +59,7 @@ function PutDatabasePageType(
     string $name
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `PAGE_TYPE` ( `Id`, `Slug`, `Name` ) values ( ?, ?, ? )' );
+    $statement = GetDatabaseStatement( 'replace into `PAGE_TYPE` ( `Id`, `Slug`, `Name` ) values ( ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $name, PDO::PARAM_STR );
@@ -80,7 +80,7 @@ function SetDatabasePageType(
     string $name
     )
 {
-     $statement = GetDatabaseStatement( 'update `PAGE_TYPE` set `Slug` = ?, `Name` = ? where Id = ?' );
+    $statement = GetDatabaseStatement( 'update `PAGE_TYPE` set `Slug` = ?, `Name` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $id, PDO::PARAM_STR );
@@ -97,7 +97,7 @@ function RemoveDatabasePageTypeById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'delete from `PAGE_TYPE` where `Id` = ?' );
+    $statement = GetDatabaseStatement( 'delete from `PAGE_TYPE` where `Id` = ?' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )

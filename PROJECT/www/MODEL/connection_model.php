@@ -8,7 +8,7 @@ function GetConnection(
     string $browser_address
     )
 {
-     $connection = GetDatabaseConnectionByBrowserAddress( $browser_address );
+    $connection = GetDatabaseConnectionByBrowserAddress( $browser_address );
 
     if ( $connection !== false )
     {

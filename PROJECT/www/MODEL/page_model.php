@@ -8,10 +8,10 @@ function LinkPageArray(
     array &$page_array
     )
 {
-     $page_count = count( $page_array );
-     $page_index = 0;
+    $page_count = count( $page_array );
+    $page_index = 0;
 
-    foreach ( $page_array as  $page )
+    foreach ( $page_array as $page )
     {
         $page->PageIndex = $page_index;
 
@@ -54,9 +54,9 @@ function GetActivePageArray(
     string $language_code
     )
 {
-     $active_page_array = [];
+    $active_page_array = [];
 
-    foreach ( $page_array as  $page )
+    foreach ( $page_array as $page )
     {
         if ( $page->IsActive
              && in_array( $language_code, $page->LanguageCodeArray, true ) )
@@ -76,15 +76,15 @@ function GetValidPageByIdMap(
     array &$block_by_id_map
     )
 {
-     $page_by_id_map = [];
+    $page_by_id_map = [];
 
-    foreach ( $page_array as  $page )
+    foreach ( $page_array as $page )
     {
         $page->BlockArray = [];
         $page_by_id_map[ $page->Id ] = $page;
     }
 
-    foreach ( $block_array as  $block )
+    foreach ( $block_array as $block )
     {
         if ( isset( $page_by_id_map[ $block->PageId ] ) )
         {
@@ -95,7 +95,7 @@ function GetValidPageByIdMap(
         }
     }
 
-    foreach ( $page_array as  $page )
+    foreach ( $page_array as $page )
     {
         SortArrayByValue( $page->BlockArray, 'GetBlockComparison' );
         LinkBlockArray( $page->BlockArray );
@@ -110,9 +110,9 @@ function GetPageBySlugMap(
     array &$page_array
     )
 {
-     $page_by_slug_map = [];
+    $page_by_slug_map = [];
 
-    foreach ( $page_array as  $page )
+    foreach ( $page_array as $page )
     {
         $page_by_slug_map[ $page->Slug ] = $page;
     }

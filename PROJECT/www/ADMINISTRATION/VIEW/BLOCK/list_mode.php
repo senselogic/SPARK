@@ -6,7 +6,7 @@
     function GetListMode(
         )
     {
-        return FindSessionValue( "<?php echo  $list_mode_name; ?>", "card" );
+        return FindSessionValue( "<?php echo $list_mode_name; ?>", "card" );
     }
 
     // ~~

@@ -17,13 +17,13 @@ class DO_ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
-             $id = GetPostValue( 'Id' );
-             $name = GetPostValue( 'Name' );
-             $company = GetPostValue( 'Company' );
-             $email = GetPostValue( 'Email' );
-             $phone = GetPostValue( 'Phone' );
-             $subject = GetPostValue( 'Subject' );
-             $message = GetPostValue( 'Message' );
+            $id = GetPostValue( 'Id' );
+            $name = GetPostValue( 'Name' );
+            $company = GetPostValue( 'Company' );
+            $email = GetPostValue( 'Email' );
+            $phone = GetPostValue( 'Phone' );
+            $subject = GetPostValue( 'Subject' );
+            $message = GetPostValue( 'Message' );
 
             AddDatabaseContact( $id, $name, $company, $email, $phone, $subject, $message );
 
@@ -34,4 +34,4 @@ class DO_ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_contact_controller = new DO_ADD_CONTACT_CONTROLLER(  $language_code );
+$do_add_contact_controller = new DO_ADD_CONTACT_CONTROLLER( $language_code );

@@ -36,4 +36,4 @@ class REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_user_controller = new REMOVE_USER_CONTROLLER(  $language_code,  $user_id );
+$remove_user_controller = new REMOVE_USER_CONTROLLER( $language_code, $user_id );

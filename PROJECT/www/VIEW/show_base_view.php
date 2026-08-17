@@ -1,5 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
-<?php  $site_is_singlepage = true; ?>
+<?php $site_is_singlepage = true; ?>
 <script>
     // -- VARIABLES
 
@@ -345,7 +345,7 @@
 <div>
     <?php require __DIR__ . '/' . 'PAGE/starter_page.php'; ?>
     <?php if ( $site_is_singlepage ) { ?>
-        <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
+        <?php foreach ( $this->PageByIdMap as $page_id => $page ) { ?>
             <?php if ( $page->Route == $this->PageRoute ) { ?>
                 <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
                     <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
@@ -359,7 +359,7 @@
             <?php } ?>
         <?php } ?>
     <?php } else { ?>
-        <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
+        <?php foreach ( $this->PageByIdMap as $page_id => $page ) { ?>
             <?php if ( $page->Route == $this->PageRoute ) { ?>
                 <div class="view" data-view-route="<?php echo $page->Route; ?>">
                     <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>

@@ -12,7 +12,7 @@
             filter_expression;
 
         filter = GetElement( "#filter-input" ).value;
-        SetSessionValue( "<?php echo  $filter_name; ?>", filter );
+        SetSessionValue( "<?php echo $filter_name; ?>", filter );
 
         GetElements( ".filter-row" ).Iterate(
             function (

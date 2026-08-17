@@ -3,7 +3,7 @@
         <?php echo htmlspecialchars( GetTextBySlug( 'Page Id' ) ); ?> :
     </div>
     <div class="form-field-value" data-is-column-value data-column-name="PageId">
-        <dropdown-component class="form-component" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText(  $block->PageId ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ) ); ?>"></dropdown-component>
+        <dropdown-component class="form-component" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText( $block->PageId ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ) ); ?>"></dropdown-component>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :

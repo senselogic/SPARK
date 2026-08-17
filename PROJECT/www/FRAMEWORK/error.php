@@ -3,7 +3,7 @@
 function GetErrorMessage(
     )
 {
-     $error_property_array = error_get_last();
+    $error_property_array = error_get_last();
 
     if ( $error_property_array !== null
          && isset( $error_property_array[ 'message' ] ) )
@@ -90,9 +90,9 @@ function PrintError(
 function PrintStack(
     )
 {
-     $function_call_array = debug_backtrace();
+    $function_call_array = debug_backtrace();
 
-    foreach ( $function_call_array as  $function_call )
+    foreach ( $function_call_array as $function_call )
     {
         PrintLine(
             $function_call[ 'file' ]

@@ -2,7 +2,7 @@
 <div id="manage-blocks-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
-            <?php  $filter_name = "BlockFilter"; ?>
+            <?php $filter_name = "BlockFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/block/add">
@@ -10,7 +10,7 @@
             <?php } ?>
         </div>
     </div>
-    <?php foreach ( $this->BlockArray as  $block ) { ?>
+    <?php foreach ( $this->BlockArray as $block ) { ?>
         <div class="page-section form-section filter-row">
             <?php
                 require __DIR__ . '/' . 'BLOCK/PREVIEW/block.php';

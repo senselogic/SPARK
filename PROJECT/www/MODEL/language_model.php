@@ -8,9 +8,9 @@ function GetActiveLanguageArray(
     array &$language_array
     )
 {
-     $active_language_array = [];
+    $active_language_array = [];
 
-    foreach ( $language_array as  $language )
+    foreach ( $language_array as $language )
     {
         if ( $language->IsActive )
         {

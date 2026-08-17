@@ -4,10 +4,10 @@ function GetRssItemArray(
     $rss_feed_path
     )
 {
-     $xml_content = simplexml_load_file( $rss_feed_path );
-     $item_array = $xml_content->xpath( '//item' );
+    $xml_content = simplexml_load_file( $rss_feed_path );
+    $item_array = $xml_content->xpath( '//item' );
 
-    foreach ( $item_array as  $item )
+    foreach ( $item_array as $item )
     {
         $item->timestamp = strtotime( $item->pubDate );
     }

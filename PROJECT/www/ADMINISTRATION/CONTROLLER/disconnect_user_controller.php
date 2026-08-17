@@ -25,4 +25,4 @@ class DISCONNECT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $disconnect_user_controller = new DISCONNECT_USER_CONTROLLER(  $language_code );
+$disconnect_user_controller = new DISCONNECT_USER_CONTROLLER( $language_code );

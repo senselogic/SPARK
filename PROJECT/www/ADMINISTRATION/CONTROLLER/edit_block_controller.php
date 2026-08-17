@@ -36,4 +36,4 @@ class EDIT_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $edit_block_controller = new EDIT_BLOCK_CONTROLLER(  $language_code,  $block_id );
+$edit_block_controller = new EDIT_BLOCK_CONTROLLER( $language_code, $block_id );

@@ -45,11 +45,11 @@
         <form class="form-centered" name="AddPageTypeForm" onsubmit="return IsValidAddPageTypeForm()" action="/admin/page-type/add" method="post">
             <div class="form-container" data-is-row data-table-name="PAGE_TYPE">
                 <?php
-                     $field_name = 'Id';
+                    $field_name = 'Id';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -63,11 +63,11 @@
                     <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Slug';
+                    $field_name = 'Slug';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {
@@ -81,11 +81,11 @@
                     <input-component class="form-component" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Name';
+                    $field_name = 'Name';
 
                     if ( HasQueryValue( $field_name ) )
                     {
-                         $field_value = GetQueryValue( $field_name );
+                        $field_value = GetQueryValue( $field_name );
                     }
                     else
                     {

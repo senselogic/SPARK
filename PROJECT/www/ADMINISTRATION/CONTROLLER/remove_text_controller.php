@@ -36,4 +36,4 @@ class REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_text_controller = new REMOVE_TEXT_CONTROLLER(  $language_code,  $text_id );
+$remove_text_controller = new REMOVE_TEXT_CONTROLLER( $language_code, $text_id );

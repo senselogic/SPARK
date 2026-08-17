@@ -78,14 +78,14 @@ function DownloadFile(
     string $file_path
     )
 {
-     $curl_request = curl_init( $file_url );
+    $curl_request = curl_init( $file_url );
     curl_setopt( $curl_request, CURLOPT_HEADER, 0 );
     curl_setopt( $curl_request, CURLOPT_RETURNTRANSFER, 1 );
     curl_setopt( $curl_request, CURLOPT_BINARYTRANSFER, 1 );
-     $file_content = curl_exec( $curl_request );
+    $file_content = curl_exec( $curl_request );
     curl_close( $curl_request );
 
-     $file_ = fopen( $file_path, 'w' );
+    $file_ = fopen( $file_path, 'w' );
     fwrite( $file_, $file_content );
     fclose( $file_ );
 }

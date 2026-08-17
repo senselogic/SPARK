@@ -36,4 +36,4 @@ class REMOVE_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $remove_connection_controller = new REMOVE_CONNECTION_CONTROLLER(  $language_code,  $connection_id );
+$remove_connection_controller = new REMOVE_CONNECTION_CONTROLLER( $language_code, $connection_id );
